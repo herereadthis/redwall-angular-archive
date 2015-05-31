@@ -1,6 +1,6 @@
 var React = require('react');
 
-require("./styles/global.css");
+require("./styles/global.less");
 
 export default class App extends React.Component {
     render() {
