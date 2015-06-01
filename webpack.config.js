@@ -1,11 +1,11 @@
+// Add WebPack to use the included CommonsChunkPlugin
 var Webpack = require('webpack');
+// node path module
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'public', 'build');
+var buildPath = path.resolve(__dirname, 'public');
 var mainPath = path.resolve(__dirname, 'app', 'main.js');
-
-
-
+// embedded stylesheets http://webpack.github.io/docs/stylesheets.html
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
@@ -36,7 +36,7 @@ var config = {
 
         // Everything related to Webpack should go through a build path,
         // localhost:3000/build. That makes proxying easier to handle
-        publicPath: '/build/'
+        publicPath: '/'
     },
     module: {
 

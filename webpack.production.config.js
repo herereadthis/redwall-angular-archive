@@ -1,7 +1,7 @@
 var Webpack = require('webpack');
 var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'dist', 'build');
+var buildPath = path.resolve(__dirname, 'dist');
 var mainPath = path.resolve(__dirname, 'app', 'main.js');
 
 
@@ -34,6 +34,7 @@ var config = {
     // from Node
     plugins: [
         new Webpack.HotModuleReplacementPlugin(),
+        // https://www.npmjs.com/package/html-webpack-plugin
         new HtmlWebpackPlugin({
             inject: true,
             template: 'public/index.html'
