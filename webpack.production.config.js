@@ -37,7 +37,7 @@ var config = {
         // https://www.npmjs.com/package/html-webpack-plugin
         new HtmlWebpackPlugin({
             inject: true,
-            template: 'public/index.html'
+            template: 'app/index.html'
         }),
         new ExtractTextPlugin("styles/global.css")
     ]
