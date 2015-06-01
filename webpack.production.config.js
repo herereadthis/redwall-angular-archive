@@ -14,8 +14,11 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var config = {
 
     // We change to normal source mapping
-    devtool: 'source-map',
-    entry: mainPath,
+    //devtool: 'source-map',
+    entry: {
+        app: mainPath,
+        vendors: ['react']
+    },
     output: {
         path: buildPath,
         filename: 'bundle.js'
@@ -39,6 +42,7 @@ var config = {
             inject: true,
             template: 'app/index.html'
         }),
+        new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new ExtractTextPlugin("styles/global.css")
     ]
 };

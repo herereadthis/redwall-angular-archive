@@ -9,23 +9,20 @@ var mainPath = path.resolve(__dirname, 'app', 'main.js');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
-
-    // Makes sure errors in console map to the correct file
-    // and line number
+    // Makes sure errors in console map to the correct file and line number
     devtool: 'eval',
-    entry: [
-
-        // For hot style updates
-        'webpack/hot/dev-server',
-
-        // The script refreshing the browser on none hot updates
-        'webpack-dev-server/client?http://localhost:8080',
-
-        // Our application
-        mainPath
-    ],
+    entry: {
+        app: [
+            // For hot style updates
+            'webpack/hot/dev-server',
+            // The script refreshing the browser on none hot updates
+            'webpack-dev-server/client?http://localhost:8080',
+            // Our application
+            mainPath
+        ],
+        vendors: ['react']
+    },
     output: {
-
         // We need to give Webpack a path. It does not actually need it,
         // because files are kept in memory in webpack-dev-server, but an
         // error will occur if nothing is specified. We use the buildPath
@@ -64,6 +61,7 @@ var config = {
     // from Node
     plugins: [
         new Webpack.HotModuleReplacementPlugin(),
+        new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new ExtractTextPlugin("styles/global.css")
     ]
 };
