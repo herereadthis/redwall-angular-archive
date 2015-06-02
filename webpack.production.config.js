@@ -8,7 +8,6 @@ var mainPath = path.resolve(__dirname, 'app', 'main.js');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
-
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var config = {
@@ -24,14 +23,21 @@ var config = {
         filename: 'bundle.js'
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel',
-            exclude: [nodeModulesPath]
-        },{
-            test: /\.(css|less)$/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
-        }]
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: [nodeModulesPath]
+            },
+            {
+                test: /\.(css|less)$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+            },
+            {
+                test: /\.(ico)$/,
+                loader: "file-loader"
+            }
+        ]
     },
     // We have to manually add the Hot Replacement plugin when running
     // from Node

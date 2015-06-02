@@ -2,6 +2,15 @@ var React = require('react');
 
 require("./styles/global.less");
 
+require("copy!../favicon.ico");
+
+//require('file?name=favicon.ico?[hash]&context=/');
+
+//require("file?name=!./favicon.ico");
+//require("file?name=favicon.ico!./favicon.ico");
+
+
+
 
 export default class App extends React.Component {
     render() {
