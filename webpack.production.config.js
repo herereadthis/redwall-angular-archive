@@ -4,9 +4,7 @@ var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'dist');
 var mainPath = path.resolve(__dirname, 'app', 'main.js');
 
-
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -35,7 +33,7 @@ var config = {
             },
             {
                 test: /\.(ico)$/,
-                loader: "file-loader"
+                loader: "copy-loader"
             }
         ]
     },
