@@ -3,6 +3,7 @@ var path = require('path');
 var nodeModulesPath = path.resolve(__dirname, 'node_modules');
 var buildPath = path.resolve(__dirname, 'dist');
 var mainPath = path.resolve(__dirname, 'app', 'main.js');
+//var faviconLoader = require('./server/favicon-loader.js');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -33,7 +34,7 @@ var config = {
             },
             {
                 test: /\.(ico)$/,
-                loader: "copy-loader"
+                loader: "file-loader"
             }
         ]
     },
