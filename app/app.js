@@ -2,7 +2,7 @@ var React = require('react');
 
 require("./styles/global.less");
 
-require("copy?name=fsavicon.ico!./favicon.ico");
+require("copy?name=foovicon.ico!./favicon.ico");
 
 //require('file?name=favicon.ico?[hash]&context=/');
 
