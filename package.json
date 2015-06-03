@@ -12,14 +12,15 @@
     "type": "git",
     "url": "https://github.com/herereadthis/redwall-react.git"
   },
-  "author": "Jimmy Ha",
+  "author": {
+    "name": "Jimmy Ha"
+  },
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/herereadthis/redwall-react/issues"
   },
   "homepage": "https://github.com/herereadthis/redwall-react",
   "devDependencies": {
-    "copy-loader": "^0.1.2",
     "css-loader": "^0.14.4",
     "express": "^4.12.4",
     "extract-text-webpack-plugin": "^0.8.1",
@@ -28,6 +29,7 @@
     "http-proxy": "^1.11.1",
     "immutable": "^3.7.3",
     "less-loader": "^2.2.0",
+    "static-loader": "^0.1.0",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
     "webpack": "^1.9.7",

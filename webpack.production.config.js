@@ -34,7 +34,7 @@ var config = {
             },
             {
                 test: /\.(ico)$/,
-                loader: "copy-loader"
+                loader: "static-loader"
             }
         ]
     },

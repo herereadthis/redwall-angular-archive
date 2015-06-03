@@ -3,7 +3,7 @@ var React = require('react');
 require("./styles/global.less");
 
 //require("copy?root=app/!./test.png");
-require("copy?!./favicon.ico?output=favicon.ico");
+require("static?!./favicon.ico?output=favicon.ico");
 
 
 //require("copy?context=la!./favicon.ico");
