@@ -25,9 +25,11 @@ module.exports.raw = true;
 /*
  module.exports = function(content) {
  //assert(content instanceof Buffer);
- url = 'asdfasd';
+ var query = loaderUtils.parseQuery(this.query);
+ var url = JSON.stringify(content) + JSON.stringify(query);
  this.emitFile(url, content);
  return content;
  };
  module.exports.raw = true;
+
  */

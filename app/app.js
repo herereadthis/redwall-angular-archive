@@ -2,12 +2,15 @@ var React = require('react');
 
 require("./styles/global.less");
 
-//require("copy!./favicon.ico");
+require("copy?asdf&foo=bar!./test.txt");
+
+
+//require("copy?context=la!./favicon.ico");
 
 //require('file?name=favicon.ico?[hash]&context=/');
 
 //require("file?name=!./favicon.ico");
-require("file?name=favicon.ico!./favicon.ico");
+//require("file?name=favicon.ico!./favicon.ico");
 
 
 

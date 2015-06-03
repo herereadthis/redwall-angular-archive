@@ -33,8 +33,8 @@ var config = {
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
             },
             {
-                test: /\.(ico)$/,
-                loader: "file-loader"
+                test: /\.(txt)$/,
+                loader: "copy-loader"
             }
         ]
     },
