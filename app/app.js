@@ -2,7 +2,8 @@ var React = require('react');
 
 require("./styles/global.less");
 
-require("copy?asdf&foo=bar!./test.txt");
+//require("copy?root=app/!./test.png");
+require("copy?!./favicon.ico?output=favicon.ico");
 
 
 //require("copy?context=la!./favicon.ico");

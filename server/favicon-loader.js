@@ -1,35 +1,19 @@
-/*
- MIT License http://www.opensource.org/licenses/mit-license.php
- Author Mark Marijnissen
- */
+var loaderUtils = require("loader-utils");
 
-var loaderUtils = require("node_modules/loader-utils");
-
-
-module.exports = function (content) {
-    this.cacheable && this.cacheable();
+module.exports = function(content) {
     if (!this.emitFile) throw new Error("emitFile is required from module system");
-    var foo = loaderUtils.parseQuery(this.query);
-    if (foo.name === undefined) {
-        var url = 'favicon.ico';
-        this.emitFile(url, content);
-        return "module.exports = __webpack_public_path__ + " + JSON.stringify(url);
+
+    var url, query, root;
+
+    url = this.resourcePath;
+    query = loaderUtils.parseQuery(this.resourceQuery)
+    root = this.options.context;
+
+    url = url.substr(url.indexOf(root) + root.length);
+
+    if (JSON.stringify(this.query) !== '"?"') {
+        this.emitFile(query.output, content);
     }
-    else {
-        return '';
-    }
+    return '';
 };
 module.exports.raw = true;
-
-
-/*
- module.exports = function(content) {
- //assert(content instanceof Buffer);
- var query = loaderUtils.parseQuery(this.query);
- var url = JSON.stringify(content) + JSON.stringify(query);
- this.emitFile(url, content);
- return content;
- };
- module.exports.raw = true;
-
- */
