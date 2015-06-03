@@ -20,3 +20,14 @@ module.exports = function (content) {
     }
 };
 module.exports.raw = true;
+
+
+/*
+ module.exports = function(content) {
+ //assert(content instanceof Buffer);
+ url = 'asdfasd';
+ this.emitFile(url, content);
+ return content;
+ };
+ module.exports.raw = true;
+ */
