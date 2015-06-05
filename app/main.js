@@ -1,12 +1,9 @@
 import React from 'react';
-//import App from './app';
+import App from './app';
 
 import Router from 'react-router';
 
 
-
-require("styles/global.less");
-require("static?!./favicon.ico?output=favicon.ico");
 
 var {DefaultRoute, Route, Link, RouteHandler} = Router;
 
@@ -33,20 +30,6 @@ class Code extends React.Component {
     }
 }
 
-
-var App = React.createClass({
-    render () {
-        return (
-            <div>
-                <h1>App</h1>
-                <ul>
-                    <li><Link to="code">Code</Link></li>
-                </ul>
-                <RouteHandler />
-            </div>
-        )
-    }
-});
 
 
 

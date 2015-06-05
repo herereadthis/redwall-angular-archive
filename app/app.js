@@ -1,21 +1,12 @@
 var React = require('react');
 
+import { Link, RouteHandler} from 'react-router';
+
+import Homepage from 'views/Homepage/Homepage';
+import Code from 'views/Code/Code';
+
 require("styles/global.less");
-
-
-
-
-
-//require("copy?root=app/!./test.png");
 require("static?!./favicon.ico?output=favicon.ico");
-
-
-//require("copy?context=la!./favicon.ico");
-
-//require('file?name=favicon.ico?[hash]&context=/');
-
-//require("file?name=!./favicon.ico");
-//require("file?name=favicon.ico!./favicon.ico");
 
 
 
@@ -23,7 +14,10 @@ require("static?!./favicon.ico?output=favicon.ico");
 export default class App extends React.Component {
     render() {
         return (
-            <h1>Hello world, it is nice to meet you!</h1>
+            <div>
+                <Homepage />
+                <RouteHandler />
+            </div>
         );
     }
 }
