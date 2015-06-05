@@ -27,6 +27,8 @@
     "file-loader": "^0.8.4",
     "html-webpack-plugin": "^1.4.0",
     "http-proxy": "^1.11.1",
+    "image-webpack-loader": "^1.4.0",
+    "imagemin": "^3.2.0",
     "immutable": "^3.7.3",
     "less-loader": "^2.2.0",
     "static-loader": "^0.1.2",

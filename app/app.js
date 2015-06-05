@@ -1,6 +1,6 @@
 var React = require('react');
 
-require("./styles/global.less");
+require("styles/global.less");
 
 
 

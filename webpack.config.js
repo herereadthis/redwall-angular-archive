@@ -35,8 +35,11 @@ var config = {
         // localhost:3000/build. That makes proxying easier to handle
         publicPath: '/'
     },
+    resolve: {
+        extensions: ['', '.js'],
+        modulesDirectories: ['node_modules', 'app']
+    },
     module: {
-
         loaders: [
 
             // I highly recommend using the babel-loader as it gives you
@@ -59,12 +62,16 @@ var config = {
                 loader: "static-loader"
             },
             {
-                test:/\.(png|jpg|svg)$/,
-                loader:"url?limit=1024"
+                test: /\.(jpg?g|png|jpg|svg|gif)$/,
+                loaders: [
+                    "url?limit=10240&digest=hex&name=img-[sha512:hash:base64:7].[ext]",
+                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
             }
 
         ]
     },
+
 
     // We have to manually add the Hot Replacement plugin when running
     // from Node
