@@ -29,7 +29,7 @@
     "http-proxy": "^1.11.1",
     "immutable": "^3.7.3",
     "less-loader": "^2.2.0",
-    "static-loader": "^0.1.0",
+    "static-loader": "^0.1.2",
     "style-loader": "^0.12.3",
     "url-loader": "^0.5.6",
     "webpack": "^1.9.7",

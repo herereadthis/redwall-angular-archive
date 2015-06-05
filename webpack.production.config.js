@@ -33,6 +33,10 @@ var config = {
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
             },
             {
+                test:/\.(png|jpg|svg)$/,
+                loader:"url?limit=1024"
+            },
+            {
                 test: /\.(ico)$/,
                 loader: "static-loader"
             }

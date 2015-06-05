@@ -2,6 +2,10 @@ var React = require('react');
 
 require("./styles/global.less");
 
+
+
+
+
 //require("copy?root=app/!./test.png");
 require("static?!./favicon.ico?output=favicon.ico");
 

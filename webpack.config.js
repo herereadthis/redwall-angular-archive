@@ -53,14 +53,14 @@ var config = {
                 test: /\.(css|less)$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
             },
-            // favicon
             {
+                // favicon
                 test: /\.(ico)$/,
-                loader: "copy-loader?limit=1024"
+                loader: "static-loader"
             },
             {
-                test: /\.(png)$/,
-                loader: "file-loader"
+                test:/\.(png|jpg|svg)$/,
+                loader:"url?limit=1024"
             }
 
         ]
