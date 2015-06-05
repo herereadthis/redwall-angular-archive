@@ -15,7 +15,7 @@ var config = {
     //devtool: 'source-map',
     entry: {
         app: mainPath,
-        vendors: ['react']
+        vendors: ['react', 'react-router']
     },
     output: {
         path: buildPath,

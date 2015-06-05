@@ -20,7 +20,7 @@ var config = {
             // Our application
             mainPath
         ],
-        vendors: ['react']
+        vendors: ['react', 'react-router']
     },
     output: {
         // We need to give Webpack a path. It does not actually need it,

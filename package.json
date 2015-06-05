@@ -43,6 +43,7 @@
     "flummox": "^3.5.2",
     "less": "^2.5.1",
     "mossflower": "^0.2.8",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
   }
 }
