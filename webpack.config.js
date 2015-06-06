@@ -46,7 +46,7 @@ var config = {
             // ES6/7 syntax and JSX transpiling out of the box
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader?stage=0&externalHelpers',
                 exclude: [nodeModulesPath]
             },
 
