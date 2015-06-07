@@ -1,16 +1,25 @@
 // Add WebPack to use the included CommonsChunkPlugin
-var Webpack = require('webpack');
-// node path module
-var path = require('path');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'app');
-var mainPath = path.resolve(__dirname, 'app', 'main.js');
-// embedded stylesheets http://webpack.github.io/docs/stylesheets.html
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var Webpack, path, paths, ExtractTextPlugin, config;
 
-var config = {
+Webpack = require('webpack');
+path = require('path');
+
+paths = {
+    // node path module
+    nodeModules: path.resolve(__dirname, 'node_modules'),
+    bowerComponents: path.resolve(__dirname, 'bower_components'),
+    build: path.resolve(__dirname, 'app'),
+    main: path.resolve(__dirname, 'app', 'main.js')
+};
+// Extract Text Plugin is for embedded stylesheets to be compiled as CSS
+// http://webpack.github.io/docs/stylesheets.html
+ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+
+config = {
     // Makes sure errors in console map to the correct file and line number
-    devtool: 'eval',
+    devtool: 'inline-source-map',
+    debug: true,
     entry: {
         app: [
             // For hot style updates
@@ -18,17 +27,17 @@ var config = {
             // The script refreshing the browser on none hot updates
             'webpack-dev-server/client?http://localhost:8080',
             // Our application
-            mainPath
+            paths.main
         ],
         vendors: ['react', 'react-router']
     },
     output: {
         // We need to give Webpack a path. It does not actually need it,
         // because files are kept in memory in webpack-dev-server, but an
-        // error will occur if nothing is specified. We use the buildPath
+        // error will occur if nothing is specified. We use the paths.build
         // as that points to where the files will eventually be bundled
         // in production
-        path: buildPath,
+        path: paths.build,
         filename: 'bundle.js',
 
         // Everything related to Webpack should go through a build path,
@@ -46,8 +55,10 @@ var config = {
             // ES6/7 syntax and JSX transpiling out of the box
             {
                 test: /\.js$/,
-                loader: 'babel-loader?stage=0&externalHelpers',
-                exclude: [nodeModulesPath]
+                loaders: [
+                    'babel-loader?stage=0&externalHelpers'
+                ],
+                exclude: [paths.nodeModules, paths.bowerComponents]
             },
 
             // Let us also add the style-loader and css-loader, which you can
