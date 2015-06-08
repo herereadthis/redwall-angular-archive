@@ -1,7 +1,12 @@
-// Add WebPack to use the included CommonsChunkPlugin
+/*
+A lot of the work here inspired from
+http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+*/
+
 var Webpack, path, paths, ExtractTextPlugin, config;
 
 Webpack = require('webpack');
+
 path = require('path');
 
 paths = {
@@ -11,10 +16,10 @@ paths = {
     build: path.resolve(__dirname, 'app'),
     main: path.resolve(__dirname, 'app', 'main.js')
 };
+
 // Extract Text Plugin is for embedded stylesheets to be compiled as CSS
 // http://webpack.github.io/docs/stylesheets.html
 ExtractTextPlugin = require("extract-text-webpack-plugin");
-
 
 config = {
     // Makes sure errors in console map to the correct file and line number
@@ -59,12 +64,11 @@ config = {
                     stage: 0
                 }
             },
-
-            // Let us also add the style-loader and css-loader, which you can
-            // expand with less-loader etc.
             {
                 test: /\.(css|less)$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+                loader: ExtractTextPlugin.extract(
+                    'style-loader', 'css-loader!less-loader'
+                )
             },
             {
                 // favicon
@@ -78,16 +82,11 @@ config = {
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
             }
-
         ]
     },
-
-
     // We have to manually add the Hot Replacement plugin when running
     // from Node
     plugins: [
-        // Search for equal or similar files and deduplicate them in the
-        // output.
         new Webpack.optimize.DedupePlugin(),
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
