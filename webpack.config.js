@@ -29,7 +29,7 @@ config = {
             // Our application
             paths.main
         ],
-        vendors: ['react', 'react-router']
+        vendors: ['react', 'react-router', 'flummox']
     },
     output: {
         // We need to give Webpack a path. It does not actually need it,
@@ -50,15 +50,14 @@ config = {
     },
     module: {
         loaders: [
-
-            // I highly recommend using the babel-loader as it gives you
-            // ES6/7 syntax and JSX transpiling out of the box
             {
                 test: /\.js$/,
-                loaders: [
-                    'babel-loader?stage=0&externalHelpers'
-                ],
-                exclude: [paths.nodeModules, paths.bowerComponents]
+                exclude: [paths.nodeModules, paths.bowerComponents],
+                loader: 'babel',
+                query: {
+                    optional: [],
+                    stage: 0
+                }
             },
 
             // Let us also add the style-loader and css-loader, which you can
@@ -87,6 +86,9 @@ config = {
     // We have to manually add the Hot Replacement plugin when running
     // from Node
     plugins: [
+        // Search for equal or similar files and deduplicate them in the
+        // output.
+        new Webpack.optimize.DedupePlugin(),
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new ExtractTextPlugin("styles/global.css")
