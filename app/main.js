@@ -26,8 +26,6 @@ var routes = (
     </Route>
 );
 
-AppStore.foo();
-
 // Router.HistoryLocation gets rid of the the /#/ hash by using html5 history
 // API for cleaner URLs
 // Router.run(routes, Router.HistoryLocation, (Handler) => {

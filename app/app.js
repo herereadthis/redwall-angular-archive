@@ -15,7 +15,7 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <Homepage />
+                <Homepage {...this.props} />
                 <RouteHandler />
             </div>
         );
