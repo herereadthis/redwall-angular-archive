@@ -47,6 +47,10 @@ config = {
                 )
             },
             {
+                test: /\.(json)$/,
+                loader: 'json'
+            },
+            {
                 test: /\.(ico)$/,
                 loader: "static-loader"
             },
@@ -67,7 +71,11 @@ config = {
         // Search for equal or similar files and deduplicate them in the
         // output.
         new Webpack.optimize.DedupePlugin(),
-        new Webpack.optimize.UglifyJsPlugin(),
+        new Webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: true
+            }
+        }),
         new HtmlWebpackPlugin({
             inject: true,
             template: 'app/index.html'

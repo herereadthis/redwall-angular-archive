@@ -71,6 +71,10 @@ config = {
                 )
             },
             {
+                test: /\.(json)$/,
+                loader: 'json'
+            },
+            {
                 // favicon
                 test: /\.(ico)$/,
                 loader: "static-loader"
@@ -78,7 +82,7 @@ config = {
             {
                 test: /\.(jpg?g|png|jpg|svg|gif)$/,
                 loaders: [
-                    "url?limit=10240&digest=hex&name=img-[sha512:hash:base64:7].[ext]",
+                    'url?limit=10240&digest=hex&name=img-[sha512:hash:base64:7].[ext]',
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
             }
