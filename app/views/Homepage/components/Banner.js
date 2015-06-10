@@ -3,11 +3,10 @@ var React = require('react');
 export default class Banner extends React.Component {
     render() {
         return (
-            <header role="banner" class="starfield" data-parallax-scroll
-                    data-parallax-speed="-50">
+            <header role="banner" className="starfield">
                 <div class="bellmaker_container">
                     <div id="construction" role="presentation"></div>
-                    <div id="header_panel" data-module="banner_image">
+                    <div id="header_panel">
                         <a href=""><span>Stand by for a 90s image!</span></a>
                     </div>
                     <div class="popup_box_simulator">
@@ -30,17 +29,21 @@ export default class Banner extends React.Component {
                                   property="v:url foaf:homepage"></span>
                             specializing in user interface development and
                             Django environments. I live and play in the
-                <span property="v:Postal" resource="#/me/address/"
-                      typeof="v:Address">
-                    <span property="v:locality" content="Washington"></span>
-                    <span property="v:region">DC</span>
-                </span> metro area.
-                <span property="foaf:based_near" resource="#/me/geo/"
-                      typeof="geo:point"
-                      prefix="geo: http://www.w3.org/2003/01/geo/wgs84_pos#">
-                    <span property="geo:lat" content="38.886757"></span>
-                    <span property="geo:long" content="-77.041626"></span>
-                </span>
+                            <span property="v:Postal" resource="#/me/address/"
+                                  typeof="v:Address">
+                                <span property="v:locality"
+                                      content="Washington"></span>
+                                <span property="v:region">DC</span>
+                            </span> metro area.
+                            <span property="foaf:based_near"
+                                  resource="#/me/geo/"
+                                  typeof="geo:point"
+                                  prefix="geo: http://www.w3.org/2003/01/geo/wgs84_pos#">
+                                <span property="geo:lat"
+                                      content="38.886757"></span>
+                                <span property="geo:long"
+                                      content="-77.041626"></span>
+                            </span>
                             I do
                             <span
                                 property="foaf:topic_interest">photography</span>
