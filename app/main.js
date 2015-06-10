@@ -20,20 +20,22 @@ const flux = new AppFlux();
 
 var routes = (
     <Route>
-        <Route name="code" path="!code" handler={Code}/>
+        <Route name="code" path="code" handler={Code}/>
         <Route name="app" path="/" handler={App}/>
         <DefaultRoute handler={App}/>
     </Route>
 );
 
+AppStore.foo();
+
 // Router.HistoryLocation gets rid of the the /#/ hash by using html5 history
 // API for cleaner URLs
 // Router.run(routes, Router.HistoryLocation, (Handler) => {
-Router.run(routes, (Handler) => {
+Router.run(routes, Router.HistoryLocation, (Handler) => {
     React.render(
         <FluxComponent flux={flux} connectToStores={[AppStore.ID]}>
             <Handler/>
         </FluxComponent>,
-        document.body
+        document.getElementById('app')
     );
 });

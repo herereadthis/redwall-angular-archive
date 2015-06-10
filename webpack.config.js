@@ -1,7 +1,7 @@
 /*
-A lot of the work here inspired from
-http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
-*/
+ A lot of the work here inspired from
+ http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+ */
 
 var Webpack, path, paths, ExtractTextPlugin, config;
 
