@@ -6,7 +6,7 @@ export default class Banner extends React.Component {
             <header role="banner" className="starfield">
                 <div className="bellmaker_container">
                     <div id="construction" role="presentation"></div>
-                    <div id="header_panel">
+                    <div id="header_panel" data-module="banner_image">
                         <a href=""><span>Stand by for a 90s image!</span></a>
                     </div>
                     <div className="popup_box_simulator">

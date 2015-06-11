@@ -4,7 +4,7 @@ import FluxComponent from 'flummox/component';
 
 import AppFlux from './AppFlux';
 import AppStore from './AppStore';
-import Code from './views/Code/Code';
+import Code from 'views/Code/Code';
 import App from './app';
 
 var {DefaultRoute, Route, Link, RouteHandler} = Router;
