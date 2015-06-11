@@ -62,7 +62,11 @@ export default class Banner extends React.Component {
                                            content="Burning Man">Burner festivals</span>
                             <span>, and practice </span>
                             <span property="foaf:topic_interest">Kyudo</span>
-                            <span>. I put Sriracha on everything.</span></p>
+                            <span>. I put Sriracha on everything.</span>
+                        </p>
+                        <a className="popup_button retro_spriter popup_close">Close</a>
+                        <a className="popup_button retro_spriter popup_resize">Resize</a>
+                        <a className="popup_button retro_spriter popup_minimize">Minimize</a>
                     </div>
                 </div>
             </header>
