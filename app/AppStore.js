@@ -9,7 +9,7 @@ const popupBox = {
     boxName: 'Welcome to my site!',
     boxTitle: 'Here, Read This!',
     colorShift: {
-        start: 'FF0',
+        begin: 'FF0',
         end: 'FF9600'
     }
 };
