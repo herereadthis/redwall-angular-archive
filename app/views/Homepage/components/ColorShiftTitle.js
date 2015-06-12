@@ -1,5 +1,9 @@
+'use strict';
+
 var React = require('react');
 
+// The Color Shifter
+// takes a string of characters and gives it a color range as you define them.
 
 export default class ColorShiftTitle extends React.Component {
 
@@ -42,27 +46,38 @@ export default class ColorShiftTitle extends React.Component {
             g: parseInt(result[2], 16),
             b: parseInt(result[3], 16)
         } : null;
-
-        //return newHex;
     };
 
-    letterColorize = () => {
-        var colorShift = this.state.colorShift;
-        var colorDiff = {
-            r: colorShift.end.r - colorShift.begin.r,
-            g: colorShift.end.g - colorShift.begin.g,
-            b: colorShift.end.b - colorShift.begin.b
+    makeLetters = () => {
+        let colors = this.state.colorShift;
+        let colorDiff = {
+            r: colors.end.r - colors.begin.r,
+            g: colors.end.g - colors.begin.g,
+            b: colors.end.b - colors.begin.b
         };
 
-        window.console.log(colorDiff);
+        let lettersArray = this.props.title.split('');
 
-        return this.props.title;
+        return lettersArray.map((value, key) => {
+            let increment = key / (lettersArray.length - 1);
+
+            // each RGB value gets one more increment of the diff value
+            let diffR = Math.round(colors.begin.r + increment * colorDiff.r);
+            let diffG = Math.round(colors.begin.g + increment * colorDiff.g);
+            let diffB = Math.round(colors.begin.b + increment * colorDiff.b);
+
+            let rgbValue = {
+                color: `rgb(${diffR},${diffG},${diffB})`
+            };
+            return (
+                <span key={key} style={rgbValue}>{value}</span>
+            );
+        });
     };
 
     render() {
-        window.console.log(this.state.colorShift.begin, this.state.colorShift.end);
         return (
-            <h1>{this.letterColorize()}</h1>
+            <h1>{this.makeLetters()}</h1>
         );
     }
 }

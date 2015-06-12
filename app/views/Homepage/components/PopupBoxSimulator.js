@@ -4,7 +4,6 @@ import ColorShiftTitle from './ColorShiftTitle';
 
 export default class PopupBoxSimulator extends React.Component {
     render() {
-        window.console.log(this.props);
         return (
             <div className="popup_box_simulator">
                 <span className="retro_spriter">{this.props.data.boxName}</span>

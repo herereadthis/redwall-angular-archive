@@ -6,8 +6,6 @@ import Banner from './components/Banner';
 
 export default class Homepage extends React.Component {
     render() {
-        window.console.log(this.props);
-
         return (
             <div>
                 <Banner {...this.props} />
