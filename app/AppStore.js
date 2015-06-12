@@ -7,7 +7,11 @@ const watches = require('./assets/json/watches.json');
 
 const popupBox = {
     boxName: 'Welcome to my site!',
-    boxTitle: 'Here, Read This!'
+    boxTitle: 'Here, Read This!',
+    colorShift: {
+        start: 'FF0',
+        end: 'FF9600'
+    }
 };
 
 export default class AppStore extends Store {
