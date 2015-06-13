@@ -4,7 +4,7 @@
  */
 
 var Webpack, path, paths,
-    ExtractTextPlugin, SaveAssetsJson,
+    ExtractTextPlugin, StatsWriterPlugin,
     config;
 
 Webpack = require('webpack');
@@ -23,7 +23,7 @@ paths = {
 // http://webpack.github.io/docs/stylesheets.html
 ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-SaveAssetsJson = require('assets-webpack-plugin');
+StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 
 config = {
     // Makes sure errors in console map to the correct file and line number
@@ -99,9 +99,9 @@ config = {
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new ExtractTextPlugin("styles/global.css"),
-        new SaveAssetsJson({
+        new StatsWriterPlugin({
             path: paths.build,
-            filename: 'assets.json'
+            filename: "assets.json"
         })
     ]
 };
