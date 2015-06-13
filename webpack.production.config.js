@@ -1,6 +1,8 @@
 // Most things in here will mirror webpack.config.js. For clarification on
 // what is implemented here, see the comments in that file.
-var Webpack, path, paths, ExtractTextPlugin, HtmlWebpackPlugin, config;
+var Webpack, path, paths,
+    ExtractTextPlugin, HtmlWebpackPlugin, SaveAssetsJson,
+    config;
 
 Webpack = require('webpack');
 
@@ -19,8 +21,7 @@ ExtractTextPlugin = require("extract-text-webpack-plugin");
 // https://www.npmjs.com/package/html-webpack-plugin
 HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
-var SaveAssetsJson = require('assets-webpack-plugin');
+SaveAssetsJson = require('assets-webpack-plugin');
 
 config = {
     debug: false,
@@ -85,8 +86,10 @@ config = {
         }),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new ExtractTextPlugin("styles/global.css"),
-
-        //new SaveAssetsJson()
+        new SaveAssetsJson({
+            path: paths.build,
+            filename: 'assets.json'
+        })
     ]
 };
 

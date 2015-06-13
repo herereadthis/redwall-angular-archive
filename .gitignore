@@ -5,3 +5,4 @@ dist
 .idea
 npm-debug.log
 bower_components
+app/assets.json

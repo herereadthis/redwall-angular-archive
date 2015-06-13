@@ -3,7 +3,9 @@
  http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
  */
 
-var Webpack, path, paths, ExtractTextPlugin, config;
+var Webpack, path, paths,
+    ExtractTextPlugin, SaveAssetsJson,
+    config;
 
 Webpack = require('webpack');
 
@@ -20,6 +22,8 @@ paths = {
 // Extract Text Plugin is for embedded stylesheets to be compiled as CSS
 // http://webpack.github.io/docs/stylesheets.html
 ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+SaveAssetsJson = require('assets-webpack-plugin');
 
 config = {
     // Makes sure errors in console map to the correct file and line number
@@ -94,7 +98,11 @@ config = {
         new Webpack.optimize.DedupePlugin(),
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-        new ExtractTextPlugin("styles/global.css")
+        new ExtractTextPlugin("styles/global.css"),
+        new SaveAssetsJson({
+            path: paths.build,
+            filename: 'assets.json'
+        })
     ]
 };
 
