@@ -77,7 +77,7 @@ export default class ColorShiftTitle extends React.Component {
 
     render() {
         return (
-            <h1>{this.makeLetters()}</h1>
+            <span>{this.makeLetters()}</span>
         );
     }
 }

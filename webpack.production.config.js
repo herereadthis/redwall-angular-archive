@@ -19,6 +19,9 @@ ExtractTextPlugin = require("extract-text-webpack-plugin");
 // https://www.npmjs.com/package/html-webpack-plugin
 HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
+var SaveAssetsJson = require('assets-webpack-plugin');
+
 config = {
     debug: false,
     entry: {
@@ -81,7 +84,9 @@ config = {
             template: 'app/index.html'
         }),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-        new ExtractTextPlugin("styles/global.css")
+        new ExtractTextPlugin("styles/global.css"),
+
+        //new SaveAssetsJson()
     ]
 };
 

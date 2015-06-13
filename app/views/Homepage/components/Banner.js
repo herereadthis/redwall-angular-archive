@@ -1,10 +1,14 @@
-var React = require('react');
+import React from 'react';
 
 import PopupBoxSimulator from './PopupBoxSimulator';
 
 export default class Banner extends React.Component {
 
     popupContent() {
+        var foafLogoUrl = 'http://herereadthis.com/build/images/branding/' +
+            'herereadthis_logo.svg';
+
+
         return (
             <p typeof="foaf:Person" resource="#/me/">
                 <span>Hi! My Name is </span>
@@ -15,7 +19,7 @@ export default class Banner extends React.Component {
                 </span>
                 <span property="foaf:givenname" content="James"></span>
                 <span property="foaf:logo"
-                      content="http://herereadthis.com/build/images/branding/herereadthis_logo.svg"></span>
+                      content={foafLogoUrl}></span>
                 <span> and I </span>
                 <span property="v:title"
                       content="UX Web Developer">make web pages</span>,
