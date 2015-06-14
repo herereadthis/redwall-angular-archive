@@ -14,4 +14,9 @@ export default class AppActions extends Actions {
     async fetch90sImage(status) {
         return status;
     }
+
+
+    recordLastPath(path) {
+        return path;
+    }
 }

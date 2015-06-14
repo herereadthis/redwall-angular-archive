@@ -4,7 +4,7 @@ import { Store } from 'flummox';
 
 import AppActions from './AppActions';
 
-import {HomepageConfig} from './AppConstants';
+import {HomepageConfig, SessionStorageMethods} from './AppConstants';
 
 window.console.log(HomepageConfig);
 
@@ -21,8 +21,13 @@ const popupBox = {
     }
 };
 
+const NoResults = [null, ''];
+
+
 export default class AppStore extends Store {
+
     static ID = 'AppStore';
+    static LAST_PATH_KEY = 'lastPath';
 
     constructor(flux) {
         super();
@@ -39,6 +44,7 @@ export default class AppStore extends Store {
 
         this.registerAsync(appActionsIds.fetchTimestamp, this.fetchTimestamp);
         this.registerAsync(appActionsIds.fetch90sImage, this.fetch90sImage);
+        this.register(appActionsIds.recordLastPath, this.recordLastPath);
     }
 
     fetchTimestamp() {
@@ -49,14 +55,23 @@ export default class AppStore extends Store {
                 })
             })
     }
+
     fetch90sImage() {
         let url = 'http://redwall.herereadthis.com/api/banner_image/?sort=hits';
-            axios.get(url)
-                .then((response) => {
-                    this.setState({
-                        ninetiesImg: response.data
-                    })
+        axios.get(url)
+            .then((response) => {
+                this.setState({
+                    ninetiesImg: response.data
                 })
+            })
+    }
+
+    recordLastPath(path) {
+        window.console.log(path);
+        if (NoResults.indexOf(path) === -1) {
+            window.console.log(path);
+            SessionStorageMethods.set(AppStore.LAST_PATH_KEY, path);
+        }
     }
 }
 

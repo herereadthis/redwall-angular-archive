@@ -4,6 +4,10 @@ import AppActions from 'AppActions';
 
 export default class RetroArt extends React.Component {
 
+    constructor() {
+        super();
+    }
+
     componentWillMount() {
         this.props.flux.getActions(AppActions.ID).fetchTimestamp(true);
     }
@@ -40,15 +44,11 @@ export default class RetroArt extends React.Component {
     };
 
     render() {
-        window.console.log(this.props);
-
         var addPadding = (pad) => {
             return {
                 paddingTop: `${pad}rem`
             }
         };
-
-
 
         return (
             <article id="retro_art" className="starfield cinnamon_fantasy"

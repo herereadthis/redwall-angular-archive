@@ -6,6 +6,11 @@ import Banner from './components/Banner';
 import RetroArt from './components/RetroArt';
 
 export default class Homepage extends React.Component {
+
+    constructor() {
+        super();
+    }
+
     render() {
         return (
             <div id="retro_homepage">

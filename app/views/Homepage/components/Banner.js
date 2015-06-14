@@ -20,7 +20,6 @@ export default class Banner extends React.Component {
         this.props.flux.getActions(AppActions.ID).fetch90sImage(true);
     }
 
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.ninetiesImg !== 0) {
             let bannerImg = nextProps.ninetiesImg[0];
