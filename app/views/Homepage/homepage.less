@@ -45,4 +45,20 @@ hr {
     }
 }
 
+@icon_size_retina: 10rem 20rem;
+[data-sprite] {
+    background-image: url("@{img_path}icon_logo_sprites.png");
+    background-repeat: no-repeat;
+}
+[data-sprite="broken_image"] {
+    background-size: @icon_size_retina;
+    background-position: 0.3rem -4.7rem;
+    width: 31px;
+    height: 32px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: @wdg @wlg @wlg @wdg;
+    padding: 0.3rem 0.4rem 0.3rem 0.3rem;
+}
+
 

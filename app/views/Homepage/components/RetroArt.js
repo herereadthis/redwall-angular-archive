@@ -31,7 +31,24 @@ export default class RetroArt extends React.Component {
         )
     };
 
+    hitCounterWidth = () => {
+        var minWidth = 0.4 + 2.2 * this.props.hitCounterFigures;
+
+        return {
+            minWidth: `${minWidth}rem`
+        }
+    };
+
     render() {
+        window.console.log(this.props);
+
+        var addPadding = (pad) => {
+            return {
+                paddingTop: `${pad}rem`
+            }
+        };
+
+
 
         return (
             <article id="retro_art" className="starfield cinnamon_fantasy"
@@ -54,11 +71,19 @@ export default class RetroArt extends React.Component {
                             <p>~~Congratulations, you are the</p>
                         </div>
                         <div>
-                            <div data-hit-counter data-hit-counter-figures="7"></div>
+                            <div data-hit-counter
+                                 data-hit-counter-figures={this.props.hitCounterFigures}
+                                style={this.hitCounterWidth()}></div>
                         </div>
                         <div>
                             <p>visitor to this site!~~</p>
                         </div>
+                    </div>
+                    <div className="centered_image" style={addPadding(1)}>
+                        <div data-sprite="broken_image"></div>
+                    </div>
+                    <div className="centered_image" style={addPadding(1)}>
+                        <img src="http://herereadthis.com/build/images/homepage/under_construction_128x40.gif" width={128} height={31} />
                     </div>
                 </section>
             </article>

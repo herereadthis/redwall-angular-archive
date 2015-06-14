@@ -4,6 +4,8 @@ import PopupBoxSimulator from './PopupBoxSimulator';
 
 import AppActions from 'AppActions';
 
+let bannerHasImg = null;
+
 
 export default class Banner extends React.Component {
 
@@ -27,10 +29,6 @@ export default class Banner extends React.Component {
             });
         }
     }
-
-    make90sImage = () => {
-
-    };
 
     handleClick = (e) => {
         e.preventDefault();
@@ -91,24 +89,21 @@ export default class Banner extends React.Component {
 
     makeImage = () => {
         if (this.state.bannerImg === undefined) {
-            return;
+            return '';
         }
         else {
-            window.console.log('success');
-            return (
-                <img src={this.state.bannerImg.thumbnail}/>
-            )
+            if (bannerHasImg === null) {
+                bannerHasImg = this.state.bannerImg.thumbnail;
+                return bannerHasImg
+            }
+            else {
+                return '';
+            }
         }
     };
 
 
     render() {
-
-        window.console.log(this.state);
-
-        var style = {
-            color: '#FF0'
-        };
 
         return (
             <header role="banner" className="starfield">
@@ -117,7 +112,8 @@ export default class Banner extends React.Component {
                     <div id="header_panel" data-module="banner_image">
                         <a href="" onClick={this.handleClick}>
                             <span>Stand by for a 90s image!</span>
-                            {this.makeImage()}
+                            <img src={this.makeImage()}
+                                 ref="bannerImage"/>
                         </a>
                     </div>
                     <PopupBoxSimulator data={this.props.popupBox}>

@@ -4,6 +4,10 @@ import { Store } from 'flummox';
 
 import AppActions from './AppActions';
 
+import {HomepageConfig} from './AppConstants';
+
+window.console.log(HomepageConfig);
+
 const watches = require('./assets/json/watches.json');
 
 import axios from 'axios'
@@ -27,7 +31,8 @@ export default class AppStore extends Store {
             watches,
             popupBox,
             timestamp: {},
-            ninetiesImg: []
+            ninetiesImg: [],
+            hitCounterFigures: HomepageConfig.hitCounterFigures
         };
 
         const appActionsIds = flux.getActionIds(AppActions.ID);
@@ -37,16 +42,14 @@ export default class AppStore extends Store {
     }
 
     fetchTimestamp() {
-        let _this = this;
         axios.get('/timestamp.json')
             .then((response) => {
-                _this.setState({
+                this.setState({
                     timestamp: response.data
                 })
             })
     }
     fetch90sImage() {
-        let _this = this;
         let url = 'http://redwall.herereadthis.com/api/banner_image/?sort=hits';
             axios.get(url)
                 .then((response) => {

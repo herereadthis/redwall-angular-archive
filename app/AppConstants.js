@@ -1,7 +1,8 @@
 'use strict';
 
 export default class AppConstants {
-    static AppConstants = {
-        imgUrl: 'http://herereadthis.com/build/images/'
+    static HomepageConfig = {
+        imgUrl: 'http://herereadthis.com/build/images/',
+        hitCounterFigures: 7
     };
 };

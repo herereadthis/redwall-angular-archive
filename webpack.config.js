@@ -39,7 +39,7 @@ config = {
             // Our application
             paths.main
         ],
-        vendors: ['react', 'react-router', 'flummox']
+        vendors: ['react', 'react-router', 'flummox', 'axios']
     },
     output: {
         // We need to give Webpack a path. It does not actually need it,
