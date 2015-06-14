@@ -16,6 +16,7 @@ paths = {
     nodeModules: path.resolve(__dirname, 'node_modules'),
     bowerComponents: path.resolve(__dirname, 'bower_components'),
     build: path.resolve(__dirname, 'app'),
+    dist: path.resolve(__dirname, 'dist'),
     main: path.resolve(__dirname, 'app', 'main.js')
 };
 
@@ -67,7 +68,7 @@ config = {
                     // handle flummox async, or otherwise,
                     //  Uncaught ReferenceError:
                     // regeneratorRuntime is not defined webpack
-                    optional: [],
+                    optional: ['runtime'],
                     stage: 0
                 }
             },
@@ -107,7 +108,7 @@ config = {
             filename: 'assets.json'
         }),
         new TimestampWebpackPlugin({
-            path: paths.build
+            path: paths.dist
         })
     ]
 };

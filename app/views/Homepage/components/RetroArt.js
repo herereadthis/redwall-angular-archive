@@ -1,6 +1,26 @@
 var React = require('react');
 
 export default class RetroArt extends React.Component {
+
+    componentWillReceiveProps() {
+        window.console.log(this.props.timestamp);
+    }
+
+
+    makeTimestamp = () => {
+        let ts = this.props.timestamp;
+
+        let dateTimeRDF = `${ts.yyyy}-${ts.MM}-${ts.dd}`;
+        let dateTime = `${ts.dd} ${ts.MMMM} ${ts.yyyy}`;
+        return (
+            <h3 className="before_text_1">
+                <span>This page was created by Jimmy Ha. Last updated: </span>
+                <time dateTime={dateTimeRDF}
+                      property="dc:modified">{dateTime}</time>
+            </h3>
+        )
+    };
+
     render() {
         var textAlign = {
             textAlign: 'center'
@@ -21,11 +41,8 @@ export default class RetroArt extends React.Component {
 
 
                     <br />
-                    <h3 className="before_text_1">This page was created by Jimmy Ha. Last updated:
-                        <time dateTime="2015-06-12" property="dc:modified">12 June 2014</time>
-                    </h3>
 
-
+                    {this.makeTimestamp()}
 
                     <div id="hit_counter">
                         <div>

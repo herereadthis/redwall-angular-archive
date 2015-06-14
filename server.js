@@ -13,7 +13,7 @@ app.use(express.static(publicPath));
 
 
 app.get('/timestamp.json', function(req, res) {
-    fs.readFile('app/timestamp.json', function(err, data) {
+    fs.readFile('dist/timestamp.json', function(err, data) {
         res.setHeader('Content-Type', 'application/json');
         res.send(data);
     });

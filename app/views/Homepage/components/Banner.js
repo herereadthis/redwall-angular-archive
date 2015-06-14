@@ -58,9 +58,6 @@ export default class Banner extends React.Component {
         );
     }
 
-    componentWillReceiveProps() {
-    }
-
     render() {
         return (
             <header role="banner" className="starfield">

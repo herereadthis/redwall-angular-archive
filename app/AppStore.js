@@ -8,9 +8,6 @@ const watches = require('./assets/json/watches.json');
 
 import axios from 'axios'
 
-const timestamp = axios.get('/timestamp.json');
-window.console.log(timestamp);
-
 const popupBox = {
     boxName: 'Welcome to my site!',
     boxTitle: 'Here, Read This!',
@@ -28,8 +25,23 @@ export default class AppStore extends Store {
 
         this.state = {
             watches,
-            popupBox
-        }
+            popupBox,
+            timestamp: {}
+        };
+
+        const appActionsIds = flux.getActionIds(AppActions.ID);
+
+        this.registerAsync(appActionsIds.fetchUsers, this.fetchUsers);
+    }
+
+    fetchUsers() {
+        let _this = this;
+        axios.get('/timestamp.json')
+            .then(function (response) {
+                _this.setState({
+                    timestamp: response.data
+                })
+            })
     }
 }
 

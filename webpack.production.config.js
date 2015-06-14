@@ -2,7 +2,7 @@
 // what is implemented here, see the comments in that file.
 var Webpack, path, paths,
     ExtractTextPlugin, HtmlWebpackPlugin,
-    StatsWriterPlugin, TimestampWebpackPlugin,
+    SaveAssetsJson, TimestampWebpackPlugin,
     config;
 
 Webpack = require('webpack');
@@ -17,21 +17,11 @@ paths = {
     main: path.resolve(__dirname, 'app', 'main.js')
 };
 
-ExtractTextPlugin = require("extract-text-webpack-plugin");
-
 // https://www.npmjs.com/package/html-webpack-plugin
 HtmlWebpackPlugin = require('html-webpack-plugin');
-
-StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
-
-/*
-TimestampWebpackPlugin = require("timestamp-webpack-plugin");
-,
-new TimestampWebpackPlugin({
-    path: paths.build,
-    filename: "timestamp.json" // Default
-})
-*/
+ExtractTextPlugin = require("extract-text-webpack-plugin");
+SaveAssetsJson = require('assets-webpack-plugin');
+TimestampWebpackPlugin = require('timestamp-webpack-plugin');
 
 config = {
     debug: false,
@@ -96,9 +86,12 @@ config = {
         }),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new ExtractTextPlugin("styles/global.css"),
-        new StatsWriterPlugin({
+        new SaveAssetsJson({
             path: paths.build,
-            filename: "assets.json" // Default
+            filename: 'assets.json'
+        }),
+        new TimestampWebpackPlugin({
+            path: paths.build
         })
     ]
 };
