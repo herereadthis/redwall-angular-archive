@@ -15,8 +15,15 @@ export default class AppActions extends Actions {
         return status;
     }
 
+    async fetchHitCount(url) {
+        return url;
+    }
+
 
     recordLastPath(path) {
+        return path;
+    }
+    getLastPath(path) {
         return path;
     }
 }

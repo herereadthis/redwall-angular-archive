@@ -6,8 +6,6 @@ import AppActions from './AppActions';
 
 import {HomepageConfig, SessionStorageMethods} from './AppConstants';
 
-window.console.log(HomepageConfig);
-
 const watches = require('./assets/json/watches.json');
 
 import axios from 'axios'
@@ -44,6 +42,8 @@ export default class AppStore extends Store {
 
         this.registerAsync(appActionsIds.fetchTimestamp, this.fetchTimestamp);
         this.registerAsync(appActionsIds.fetch90sImage, this.fetch90sImage);
+        this.registerAsync(appActionsIds.fetchHitCount, this.fetchHitCount);
+        this.register(appActionsIds.getLastPath, this.getLastPath);
         this.register(appActionsIds.recordLastPath, this.recordLastPath);
     }
 
@@ -65,11 +65,17 @@ export default class AppStore extends Store {
                 })
             })
     }
+    fetchHitCount(path) {
+        window.console.log(path);
+    }
+
+    getLastPath() {
+        let lastPath = SessionStorageMethods.get(AppStore.LAST_PATH_KEY);
+        return lastPath;
+    }
 
     recordLastPath(path) {
-        window.console.log(path);
         if (NoResults.indexOf(path) === -1) {
-            window.console.log(path);
             SessionStorageMethods.set(AppStore.LAST_PATH_KEY, path);
         }
     }

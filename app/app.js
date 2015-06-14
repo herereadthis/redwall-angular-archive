@@ -1,10 +1,10 @@
-var React = require('react');
+'use strict';
 
+import React from 'react';
 import { Link, RouteHandler} from 'react-router';
 
 import Homepage from 'views/Homepage/Homepage';
 import Code from 'views/Code/Code';
-
 import AppActions from './AppActions';
 
 require("styles/global.less");

@@ -1,6 +1,10 @@
-var React = require('react');
+'use strict';
+
+import React from 'react';
 
 import AppActions from 'AppActions';
+import AppStore from 'AppStore';
+import HitCounter from './HitCounter';
 
 export default class RetroArt extends React.Component {
 
@@ -10,8 +14,12 @@ export default class RetroArt extends React.Component {
 
     componentWillMount() {
         this.props.flux.getActions(AppActions.ID).fetchTimestamp(true);
+        let appStore = this.props.flux.getStore(AppStore.ID);
+        var lastPath = appStore.getLastPath();
+        this.setState({
+            hitCounterPath: lastPath
+        })
     }
-
 
     componentDidMount() {
         if(!this.props.flux){
@@ -71,9 +79,9 @@ export default class RetroArt extends React.Component {
                             <p>~~Congratulations, you are the</p>
                         </div>
                         <div>
-                            <div data-hit-counter
-                                 data-hit-counter-figures={this.props.hitCounterFigures}
-                                style={this.hitCounterWidth()}></div>
+                            <HitCounter figures={this.props.hitCounterFigures}
+                                        path={this.state.hitCounterPath}
+                                        flux={this.props.flux} />
                         </div>
                         <div>
                             <p>visitor to this site!~~</p>
