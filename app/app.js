@@ -9,9 +9,15 @@ require("styles/global.less");
 require("static?!./favicon.ico?output=favicon.ico");
 
 
-
-
 export default class App extends React.Component {
+
+    componentWillMount() {
+        //this.props.flux.getActions(AppActions.ID).fetchTimestamp();
+    }
+
+    componentDidMount() {
+        //this.props.flux.getActions(AppActions.ID).fetchTimestamp(true);
+    }
     render() {
         return (
             <div>

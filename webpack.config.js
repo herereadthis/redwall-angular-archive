@@ -4,7 +4,7 @@
  */
 
 var Webpack, path, paths,
-    ExtractTextPlugin, StatsWriterPlugin,
+    ExtractTextPlugin, SaveAssetsJson, TimestampWebpackPlugin,
     config;
 
 Webpack = require('webpack');
@@ -22,8 +22,8 @@ paths = {
 // Extract Text Plugin is for embedded stylesheets to be compiled as CSS
 // http://webpack.github.io/docs/stylesheets.html
 ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
+SaveAssetsJson = require('assets-webpack-plugin');
+TimestampWebpackPlugin = require('timestamp-webpack-plugin');
 
 config = {
     // Makes sure errors in console map to the correct file and line number
@@ -64,6 +64,9 @@ config = {
                 exclude: [paths.nodeModules, paths.bowerComponents],
                 loader: 'babel',
                 query: {
+                    // handle flummox async, or otherwise,
+                    //  Uncaught ReferenceError:
+                    // regeneratorRuntime is not defined webpack
                     optional: [],
                     stage: 0
                 }
@@ -99,9 +102,12 @@ config = {
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
         new ExtractTextPlugin("styles/global.css"),
-        new StatsWriterPlugin({
+        new SaveAssetsJson({
             path: paths.build,
-            filename: "assets.json"
+            filename: 'assets.json'
+        }),
+        new TimestampWebpackPlugin({
+            path: paths.build
         })
     ]
 };

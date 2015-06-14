@@ -1,7 +1,8 @@
 // Most things in here will mirror webpack.config.js. For clarification on
 // what is implemented here, see the comments in that file.
 var Webpack, path, paths,
-    ExtractTextPlugin, HtmlWebpackPlugin, StatsWriterPlugin,
+    ExtractTextPlugin, HtmlWebpackPlugin,
+    StatsWriterPlugin, TimestampWebpackPlugin,
     config;
 
 Webpack = require('webpack');
@@ -23,11 +24,20 @@ HtmlWebpackPlugin = require('html-webpack-plugin');
 
 StatsWriterPlugin = require("webpack-stats-plugin").StatsWriterPlugin;
 
+/*
+TimestampWebpackPlugin = require("timestamp-webpack-plugin");
+,
+new TimestampWebpackPlugin({
+    path: paths.build,
+    filename: "timestamp.json" // Default
+})
+*/
+
 config = {
     debug: false,
     entry: {
         app: paths.main,
-        vendors: ['react', 'react-router', 'flummox']
+        vendors: ['react', 'react-router', 'flummox', 'axios']
     },
     output: {
         path: paths.build,
@@ -40,7 +50,7 @@ config = {
                 exclude: [paths.nodeModules, paths.bowerComponents],
                 loader: 'babel',
                 query: {
-                    optional: [],
+                    optional: ['runtime'],
                     stage: 0
                 }
             },

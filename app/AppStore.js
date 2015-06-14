@@ -2,8 +2,14 @@
 
 import { Store } from 'flummox';
 
+import AppActions from './AppActions';
 
 const watches = require('./assets/json/watches.json');
+
+import axios from 'axios'
+
+const timestamp = axios.get('/timestamp.json');
+window.console.log(timestamp);
 
 const popupBox = {
     boxName: 'Welcome to my site!',
@@ -24,8 +30,6 @@ export default class AppStore extends Store {
             watches,
             popupBox
         }
-
     }
-
 }
 

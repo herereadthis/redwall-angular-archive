@@ -11,6 +11,15 @@ var publicPath = path.resolve(__dirname, 'app');
 
 app.use(express.static(publicPath));
 
+
+app.get('/timestamp.json', function(req, res) {
+    fs.readFile('app/timestamp.json', function(err, data) {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
+    });
+});
+
+
 // We only want to run the workflow when not in production
 if (!isProduction) {
 

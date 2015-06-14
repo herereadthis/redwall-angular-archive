@@ -2,6 +2,7 @@ import React from 'react';
 
 import PopupBoxSimulator from './PopupBoxSimulator';
 
+
 export default class Banner extends React.Component {
 
     popupContent() {
@@ -57,8 +58,10 @@ export default class Banner extends React.Component {
         );
     }
 
+    componentWillReceiveProps() {
+    }
+
     render() {
-        window.console.log(this.props);
         return (
             <header role="banner" className="starfield">
                 <div className="bellmaker_container">
