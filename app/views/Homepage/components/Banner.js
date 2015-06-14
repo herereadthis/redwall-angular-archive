@@ -2,8 +2,39 @@ import React from 'react';
 
 import PopupBoxSimulator from './PopupBoxSimulator';
 
+import AppActions from 'AppActions';
+
 
 export default class Banner extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {
+            bannerImg: undefined
+        };
+    }
+
+    componentWillMount() {
+        this.props.flux.getActions(AppActions.ID).fetch90sImage(true);
+    }
+
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.ninetiesImg !== 0) {
+            let bannerImg = nextProps.ninetiesImg[0];
+            this.setState({
+                bannerImg
+            });
+        }
+    }
+
+    make90sImage = () => {
+
+    };
+
+    handleClick = (e) => {
+        e.preventDefault();
+    };
 
     popupContent() {
         var foafLogoUrl = 'http://herereadthis.com/build/images/branding/' +
@@ -58,13 +89,36 @@ export default class Banner extends React.Component {
         );
     }
 
+    makeImage = () => {
+        if (this.state.bannerImg === undefined) {
+            return;
+        }
+        else {
+            window.console.log('success');
+            return (
+                <img src={this.state.bannerImg.thumbnail}/>
+            )
+        }
+    };
+
+
     render() {
+
+        window.console.log(this.state);
+
+        var style = {
+            color: '#FF0'
+        };
+
         return (
             <header role="banner" className="starfield">
                 <div className="bellmaker_container">
                     <div id="construction" role="presentation"></div>
                     <div id="header_panel" data-module="banner_image">
-                        <a href=""><span>Stand by for a 90s image!</span></a>
+                        <a href="" onClick={this.handleClick}>
+                            <span>Stand by for a 90s image!</span>
+                            {this.makeImage()}
+                        </a>
                     </div>
                     <PopupBoxSimulator data={this.props.popupBox}>
                         {this.popupContent()}

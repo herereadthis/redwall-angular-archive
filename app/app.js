@@ -12,18 +12,14 @@ require("static?!./favicon.ico?output=favicon.ico");
 
 
 export default class App extends React.Component {
-
-    componentWillMount() {
-        this.props.flux.getActions(AppActions.ID).fetchUsers(true);
-    }
-
-
-    componentDidMount() {
-        if(!this.props.flux){
-            return;
+    componentWillReceiveProps() {
+        if (this.props.ninetiesImg.length !== 0) {
+            imageInfo = this.props.ninetiesImg[0];
+            window.console.log(imageInfo);
         }
-        this.props.flux.getActions(AppActions.ID).fetchUsers(true);
+
     }
+
     render() {
         return (
             <div>

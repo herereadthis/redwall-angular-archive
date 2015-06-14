@@ -1,9 +1,19 @@
 var React = require('react');
 
+import AppActions from 'AppActions';
+
 export default class RetroArt extends React.Component {
 
-    componentWillReceiveProps() {
-        window.console.log(this.props.timestamp);
+    componentWillMount() {
+        this.props.flux.getActions(AppActions.ID).fetchTimestamp(true);
+    }
+
+
+    componentDidMount() {
+        if(!this.props.flux){
+            return;
+        }
+        this.props.flux.getActions(AppActions.ID).fetchTimestamp(true);
     }
 
 
@@ -22,21 +32,16 @@ export default class RetroArt extends React.Component {
     };
 
     render() {
-        var textAlign = {
-            textAlign: 'center'
-        };
-
 
         return (
             <article id="retro_art" className="starfield cinnamon_fantasy"
                      data-cinnamon-fantasy data-parallax-scroll
                      data-parallax-speed="-50">
                 <h2>This website is all that and a bag of chips!</h2>
-                <section className="bellmaker_container"
-                         style={textAlign}>
+                <section className="bellmaker_container">
 
                     <div className="centered_image">
-                        <img src="http://herereadthis.com/build/images/homepage/netscape_88x31.gif" width="88" height="31" />
+                        <img src="http://herereadthis.com/build/images/homepage/netscape_88x31.gif" width={88} height={31} />
                     </div>
 
 

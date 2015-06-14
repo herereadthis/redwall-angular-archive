@@ -26,22 +26,34 @@ export default class AppStore extends Store {
         this.state = {
             watches,
             popupBox,
-            timestamp: {}
+            timestamp: {},
+            ninetiesImg: []
         };
 
         const appActionsIds = flux.getActionIds(AppActions.ID);
 
-        this.registerAsync(appActionsIds.fetchUsers, this.fetchUsers);
+        this.registerAsync(appActionsIds.fetchTimestamp, this.fetchTimestamp);
+        this.registerAsync(appActionsIds.fetch90sImage, this.fetch90sImage);
     }
 
-    fetchUsers() {
+    fetchTimestamp() {
         let _this = this;
         axios.get('/timestamp.json')
-            .then(function (response) {
+            .then((response) => {
                 _this.setState({
                     timestamp: response.data
                 })
             })
+    }
+    fetch90sImage() {
+        let _this = this;
+        let url = 'http://redwall.herereadthis.com/api/banner_image/?sort=hits';
+            axios.get(url)
+                .then((response) => {
+                    this.setState({
+                        ninetiesImg: response.data
+                    })
+                })
     }
 }
 
