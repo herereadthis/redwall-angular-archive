@@ -78,11 +78,9 @@ export default class RetroArt extends React.Component {
                         <div>
                             <p>~~Congratulations, you are the</p>
                         </div>
-                        <div>
-                            <HitCounter figures={this.props.hitCounterFigures}
-                                        path={this.state.hitCounterPath}
-                                        flux={this.props.flux} />
-                        </div>
+                        <HitCounter figures={this.props.hitCounterFigures}
+                                    path={this.state.hitCounterPath}
+                                    flux={this.props.flux} />
                         <div>
                             <p>visitor to this site!~~</p>
                         </div>
