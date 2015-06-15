@@ -13,6 +13,54 @@ class HitCounterDigits extends React.Component {
         super();
     }
 
+
+    // checks to see if a number exists in an array.
+    // return one color if true, another color if false.
+    arrayCheck = (testArray, digit) => {
+        if (testArray.indexOf(digit) === -1) {
+            return this.props.colorOff;
+        }
+        else {
+            return this.props.colorOn;
+        }
+    };
+
+
+    // draws a polygon, given the context, the array of coordinates, and color
+    polyDraw = (context, polyArray, color) => {
+        var coords;
+        context.beginPath();
+        context.moveTo(polyArray[0], polyArray[1]);
+        for (coords = 2; coords < polyArray.length - 1; coords += 2) {
+            context.lineTo(polyArray[coords], polyArray[coords + 1]);
+        }
+        context.closePath();
+        context.fillStyle = color;
+        context.fill();
+    };
+
+    makeCanvasBG = (digit) => {
+        var key, canvas;
+
+        canvas = document.createElement('canvas');
+        canvas.width = this.props.numWidth;
+        canvas.height = this.props.numHeight;
+
+        for (key in HitCounterDefaults.lcd) {
+            // isolate the specific bar
+            let obj = HitCounterDefaults.lcd[key];
+            // determine if bar is 'on' or 'off' color for that specific digit
+            let cMatch = this.arrayCheck(obj.cMatch, digit);
+            // create context for canvas for the spcific bar
+            obj.context = canvas.getContext('2d');
+            // draw the bar
+            this.polyDraw(obj.context, obj.poly, cMatch);
+        }
+        return {
+            backgroundImage: `url(${canvas.toDataURL('image/png')})`
+        }
+    };
+
     makeNumbers = () => {
         var numArray, addZeros, _i, _j;
 
@@ -29,7 +77,7 @@ class HitCounterDigits extends React.Component {
         }
         return numArray.map((value, key) => {
             return (
-                <div key={key}>{value}</div>
+                <div key={key} style={this.makeCanvasBG(value)}></div>
             );
         });
     };
@@ -58,32 +106,27 @@ export default class HitCounter extends React.Component {
 
     constructor() {
         super();
-
-        this.state = {
-            figures: HitCounterDefaults.figures,
-            colorOn: HitCounterDefaults.colorOn,
-            colorOff: HitCounterDefaults.colorOff,
-            numWidth: HitCounterDefaults.numWidth,
-            numHeight: HitCounterDefaults.numHeight
-        }
     }
 
+    static propTypes = {
+        figures: React.PropTypes.number,
+        colorOn: React.PropTypes.string,
+        colorOff: React.PropTypes.string,
+        numWidth: React.PropTypes.number,
+        numHeight: React.PropTypes.number
+    };
+
+    static defaultProps = {
+        figures: HitCounterDefaults.figures,
+        colorOn: HitCounterDefaults.colorOn,
+        colorOff: HitCounterDefaults.colorOff,
+        numWidth: HitCounterDefaults.numWidth,
+        numHeight: HitCounterDefaults.numHeight
+    };
+
     renderDigits = (pageHits) => {
-
-        if (this.props.figures !== undefined) {
-            this.setState({
-                figures: this.props.figures
-            });
-        }
-        if (this.props.colorOn !== undefined) {
-            this.setState({
-                colorOn: this.props.colorOn
-            });
-        }
-
         React.render(
-            <HitCounterDigits pageHits={pageHits}
-                                {...this.state}/>,
+            <HitCounterDigits pageHits={pageHits} {...this.props}/>,
             React.findDOMNode(this.refs.HitCounter)
         );
     };
