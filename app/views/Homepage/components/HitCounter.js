@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import AppActions from 'AppActions';
 
+import HitCounterDefaults from './HitCounterDefaults';
 
 class HitCounterDigits extends React.Component {
 
@@ -43,6 +44,7 @@ class HitCounterDigits extends React.Component {
     };
 
     render() {
+        window.console.log(this.props);
         return (
             <div data-hit-counter
                  style={this.hitCounterWidth()}>{this.makeNumbers()}</div>
@@ -56,7 +58,35 @@ export default class HitCounter extends React.Component {
 
     constructor() {
         super();
+
+        this.state = {
+            figures: HitCounterDefaults.figures,
+            colorOn: HitCounterDefaults.colorOn,
+            colorOff: HitCounterDefaults.colorOff,
+            numWidth: HitCounterDefaults.numWidth,
+            numHeight: HitCounterDefaults.numHeight
+        }
     }
+
+    renderDigits = (pageHits) => {
+
+        if (this.props.figures !== undefined) {
+            this.setState({
+                figures: this.props.figures
+            });
+        }
+        if (this.props.colorOn !== undefined) {
+            this.setState({
+                colorOn: this.props.colorOn
+            });
+        }
+
+        React.render(
+            <HitCounterDigits pageHits={pageHits}
+                                {...this.state}/>,
+            React.findDOMNode(this.refs.HitCounter)
+        );
+    };
 
     fetchHitCount(path) {
         var canonicalURL = 'http://herereadthis.com',
@@ -68,19 +98,10 @@ export default class HitCounter extends React.Component {
 
         axios.get(fetchUrl)
             .then((response) => {
-                React.render(
-                    <HitCounterDigits pageHits={response.data.page_hits}
-                        figures={this.props.figures}/>,
-                    React.findDOMNode(this.refs.HitCounter)
-                );
+                this.renderDigits(response.data.page_hits);
             })
             .catch((response) => {
-                window.console.log('try this instead');
-                React.render(
-                    <HitCounterDigits pageHits={3000}
-                                      figures={this.props.figures}/>,
-                    React.findDOMNode(this.refs.HitCounter)
-                );
+                this.renderDigits(3000);
             })
     }
 
