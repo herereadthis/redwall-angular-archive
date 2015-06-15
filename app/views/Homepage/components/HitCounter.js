@@ -87,7 +87,7 @@ class HitCounterDigits extends React.Component {
         minWidth = parseFloat(minWidth.toPrecision(12));
 
         return {
-            minWidth: `${minWidth}rem`
+            width: `${minWidth}rem`
         }
     };
 

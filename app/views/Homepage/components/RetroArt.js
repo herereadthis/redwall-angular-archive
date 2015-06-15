@@ -88,6 +88,15 @@ export default class RetroArt extends React.Component {
                     <div className="centered_image" style={addPadding(1)}>
                         <div data-sprite="broken_image"></div>
                     </div>
+                    <div id="email_joke">
+                        <div>
+                            <p>My Email:</p>
+                        </div>
+                        <div className="icon_box"><div data-sprite="email"></div></div>
+                        <div>
+                            <p><a href="mailto:herereadthis@hotmail.com">herereadthis@hotmail.com</a></p>
+                        </div>
+                    </div>
                     <div className="centered_image" style={addPadding(1)}>
                         <img src="http://herereadthis.com/build/images/homepage/under_construction_128x40.gif" width={128} height={31} />
                     </div>
