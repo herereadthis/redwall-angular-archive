@@ -4,9 +4,12 @@ import React from 'react';
 
 export default class DateRender extends React.Component {
 
+    constructor() {
+        super();
+    }
+
     static testRegex = /(([a-z])+|([^a-z0-9]*))/gi;
     static keyRegex = /^\w+$/;
-
 
     static propTypes = {
         date: React.PropTypes.string.isRequired,
@@ -15,31 +18,10 @@ export default class DateRender extends React.Component {
     };
 
     static defaultProps = {
-        date: new Date(),
+        date: '',
         format: 'MM/dd/yy',
         rdf: 'dc:modified'
     };
-
-
-    constructor() {
-        super();
-        this.state = {
-            date: new Date()
-        }
-    }
-
-    componentWillMount() {
-    }
-    componentWillReceiveProps(nextProps) {
-        window.console.log(typeof nextProps.date, nextProps.date, 1);
-        this.setState({
-            date: nextProps.date
-        })
-    }
-
-    //shouldComponentUpdate(nextProps, nextState) {
-    //    return nextProps.date !== false;
-    //}
 
     leadDecimal = (num) => {
         var newNum = num.toString();
@@ -124,6 +106,7 @@ export default class DateRender extends React.Component {
             ssss: this.leadDecimal(sss),
             tz
         };
+
         return dateObj;
     };
 
@@ -170,7 +153,7 @@ export default class DateRender extends React.Component {
 
         var _l, _m, _n,
             existArray = [],
-            dateStamp = '';
+            dateStamp  = '';
 
         for (_m in dateTypes) {
             dateTypes[_m].exists = false;
@@ -218,15 +201,23 @@ export default class DateRender extends React.Component {
 
 
     render() {
-            let dateObj    = this.makeDateObj(this.props.date),
-                dateFormat = this.getFormatArray(this.props.format);
+        let checkIfDate = Date.parse(this.props.date);
 
-            let formattedDate = this.getDateValues(dateObj, dateFormat),
-                dateStamp     = this.getDateTime(dateObj, dateFormat);
+        if (isNaN(checkIfDate) === false || this.props.date !== undefined) {
+            let date = new Date(this.props.date);
+            let dateObj = this.makeDateObj(date);
+            let dateFormat = this.getFormatArray(this.props.format);
 
+            let formattedDate = this.getDateValues(dateObj, dateFormat);
+            let dateStamp = this.getDateTime(dateObj, dateFormat);
             return (
                 <time dateTime={dateStamp}
                       property={this.props.rdf}>{formattedDate}</time>
-            )
+            );
+
+        }
+        else {
+            return null;
+        }
     }
 }

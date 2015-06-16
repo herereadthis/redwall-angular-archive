@@ -31,6 +31,10 @@ export default class Banner extends React.Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.ninetiesImg !== this.props.ninetiesImg;
+    }
+
     handleClick = (e) => {
         e.preventDefault();
     };

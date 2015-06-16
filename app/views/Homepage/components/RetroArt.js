@@ -5,11 +5,11 @@ import React from 'react';
 import AppActions from 'AppActions';
 import AppStore from 'AppStore';
 import HitCounter from './HitCounter';
+import DateRender from 'components/DateRender';
 
 
 /*
 
- import DateRender from 'components/DateRender';
  <h3 className="before_text_1">
  <span>foo</span>
  <DateRender date={this.props.timestamp.date}
@@ -17,6 +17,8 @@ import HitCounter from './HitCounter';
  rdf="dc:modified"/>
  <span>foo</span>
  </h3>
+ <time dateTime={dateTimeRDF}
+ property="dc:modified">{dateTime}</time>
 
  */
 
@@ -24,9 +26,6 @@ export default class RetroArt extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            timestamp: ''
-        }
     }
 
     componentWillMount() {
@@ -45,23 +44,31 @@ export default class RetroArt extends React.Component {
         this.props.flux.getActions(AppActions.ID).fetchTimestamp(true);
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            timestamp: nextProps.timestamp
-        })
-
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.timestamp !== this.props.timestamp;
     }
 
+    getDateRender = (date) => {
+            return (
+                <span>
+                    <span>bar</span>
+                <DateRender date={date}
+                            format="d MMMM yyyy hh:mm:ss"
+                            rdf="dc:modified"/>
+                    </span>
+
+            )
+    };
+
     makeTimestamp = () => {
-        let ts = this.state.timestamp;
+        let ts = this.props.timestamp;
 
         let dateTimeRDF = `${ts.yyyy}-${ts.MM}-${ts.dd}`;
         let dateTime = `${ts.dd} ${ts.MMMM} ${ts.yyyy}`;
         return (
             <h3 className="before_text_1">
                 <span>This page was created by Jimmy Ha. Last updated: </span>
-                <time dateTime={dateTimeRDF}
-                      property="dc:modified">{dateTime}</time>
+                {this.getDateRender(ts.date)}
             </h3>
         )
     };
@@ -97,7 +104,12 @@ export default class RetroArt extends React.Component {
 
                     <br />
 
-                    {this.makeTimestamp()}
+                    <h3 className="before_text_1">
+                        <span>This page was created by Jimmy Ha. Last updated: </span>
+                        <DateRender date={this.props.timestamp.date}
+                                    format="d MMMM yyyy"
+                                    rdf="dc:modified"/>
+                    </h3>
 
                     <div id="hit_counter">
                         <div>
