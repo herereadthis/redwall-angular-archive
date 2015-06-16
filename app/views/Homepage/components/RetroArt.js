@@ -6,10 +6,27 @@ import AppActions from 'AppActions';
 import AppStore from 'AppStore';
 import HitCounter from './HitCounter';
 
+
+/*
+
+ import DateRender from 'components/DateRender';
+ <h3 className="before_text_1">
+ <span>foo</span>
+ <DateRender date={this.props.timestamp.date}
+ format="d MMMM yyyy hh:mm:ss"
+ rdf="dc:modified"/>
+ <span>foo</span>
+ </h3>
+
+ */
+
 export default class RetroArt extends React.Component {
 
     constructor() {
         super();
+        this.state = {
+            timestamp: ''
+        }
     }
 
     componentWillMount() {
@@ -22,15 +39,21 @@ export default class RetroArt extends React.Component {
     }
 
     componentDidMount() {
-        if(!this.props.flux){
+        if (!this.props.flux) {
             return;
         }
         this.props.flux.getActions(AppActions.ID).fetchTimestamp(true);
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            timestamp: nextProps.timestamp
+        })
+
+    }
 
     makeTimestamp = () => {
-        let ts = this.props.timestamp;
+        let ts = this.state.timestamp;
 
         let dateTimeRDF = `${ts.yyyy}-${ts.MM}-${ts.dd}`;
         let dateTime = `${ts.dd} ${ts.MMMM} ${ts.yyyy}`;
@@ -66,7 +89,9 @@ export default class RetroArt extends React.Component {
                 <section className="bellmaker_container">
 
                     <div className="centered_image">
-                        <img src="http://herereadthis.com/build/images/homepage/netscape_88x31.gif" width={88} height={31} />
+                        <img
+                            src="http://herereadthis.com/build/images/homepage/netscape_88x31.gif"
+                            width={88} height={31}/>
                     </div>
 
 
@@ -80,7 +105,8 @@ export default class RetroArt extends React.Component {
                         </div>
                         <HitCounter figures={this.props.hitCounterFigures}
                                     path={this.state.hitCounterPath}
-                                    flux={this.props.flux} />
+                                    flux={this.props.flux}/>
+
                         <div>
                             <p>visitor to this site!~~</p>
                         </div>
@@ -92,13 +118,18 @@ export default class RetroArt extends React.Component {
                         <div>
                             <p>My Email:</p>
                         </div>
-                        <div className="icon_box"><div data-sprite="email"></div></div>
+                        <div className="icon_box">
+                            <div data-sprite="email"></div>
+                        </div>
                         <div>
-                            <p><a href="mailto:herereadthis@hotmail.com">herereadthis@hotmail.com</a></p>
+                            <p><a href="mailto:herereadthis@hotmail.com">herereadthis@hotmail.com</a>
+                            </p>
                         </div>
                     </div>
                     <div className="centered_image" style={addPadding(1)}>
-                        <img src="http://herereadthis.com/build/images/homepage/under_construction_128x40.gif" width={128} height={31} />
+                        <img
+                            src="http://herereadthis.com/build/images/homepage/under_construction_128x40.gif"
+                            width={128} height={31}/>
                     </div>
                 </section>
             </article>

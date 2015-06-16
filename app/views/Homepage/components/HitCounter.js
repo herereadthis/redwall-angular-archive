@@ -92,7 +92,6 @@ class HitCounterDigits extends React.Component {
     };
 
     render() {
-        window.console.log(this.props);
         return (
             <div data-hit-counter
                  style={this.hitCounterWidth()}>{this.makeNumbers()}</div>

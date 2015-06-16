@@ -7,9 +7,39 @@ export default class DateRender extends React.Component {
     static testRegex = /(([a-z])+|([^a-z0-9]*))/gi;
     static keyRegex = /^\w+$/;
 
+
+    static propTypes = {
+        date: React.PropTypes.string.isRequired,
+        format: React.PropTypes.string,
+        rdf: React.PropTypes.string
+    };
+
+    static defaultProps = {
+        date: new Date(),
+        format: 'MM/dd/yy',
+        rdf: 'dc:modified'
+    };
+
+
     constructor() {
         super();
+        this.state = {
+            date: new Date()
+        }
     }
+
+    componentWillMount() {
+    }
+    componentWillReceiveProps(nextProps) {
+        window.console.log(typeof nextProps.date, nextProps.date, 1);
+        this.setState({
+            date: nextProps.date
+        })
+    }
+
+    //shouldComponentUpdate(nextProps, nextState) {
+    //    return nextProps.date !== false;
+    //}
 
     leadDecimal = (num) => {
         var newNum = num.toString();
@@ -186,15 +216,17 @@ export default class DateRender extends React.Component {
         return dateValues.join('');
     };
 
+
     render() {
-        let dateObj = this.makeDateObj(this.props.date),
-            dateFormat = this.getFormatArray(this.props.format);
+            let dateObj    = this.makeDateObj(this.props.date),
+                dateFormat = this.getFormatArray(this.props.format);
 
-        let formattedDate = this.getDateValues(dateObj, dateFormat),
-            dateStamp = this.getDateTime(dateObj, dateFormat);
+            let formattedDate = this.getDateValues(dateObj, dateFormat),
+                dateStamp     = this.getDateTime(dateObj, dateFormat);
 
-        return (
-            <time dateTime={dateStamp}>{formattedDate}</time>
-        )
+            return (
+                <time dateTime={dateStamp}
+                      property={this.props.rdf}>{formattedDate}</time>
+            )
     }
 }
