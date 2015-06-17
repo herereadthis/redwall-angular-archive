@@ -45,9 +45,12 @@ hr {
     }
 }
 
-@ibd: ~"linear-gradient(0deg, #2F4F4F 0%, #2F4F4F 100%)";
-@ibm: ~"linear-gradient(0deg, #BEBEBE 0%, #BEBEBE 100%)";
-@ibl: ~"linear-gradient(0deg, #E6E6FA 0%, #E6E6FA 100%)";
+@id: #2F4F4F;
+@ibd: linear-gradient(0deg, @id 0%, @id 100%);
+@im: #BEBEBE;
+@ibm: linear-gradient(0deg, @im 0%, @im 100%);
+@il: #E6E6FA;
+@ibl: linear-gradient(0deg, @il 0%, @il 100%);
 
 .icon_box {
     width: 4rem;
