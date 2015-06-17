@@ -48,6 +48,10 @@ export default class RetroArt extends React.Component {
             }
         };
 
+        var tca = {
+            textAlign: 'center'
+        };
+
         return (
             <article id="retro_art" className="starfield cinnamon_fantasy"
                      data-cinnamon-fantasy data-parallax-scroll
@@ -103,7 +107,7 @@ export default class RetroArt extends React.Component {
                     <hr className="rainbow_gradient" />
                 </section>
                 <section class="bellmaker_container geocities_me">
-                    <h3 style="text-align: center;">Don't ever trust dolphins!</h3>
+                    <h3 style={tca}>Don't ever trust dolphins!</h3>
                     <table class="old_school_table">
                         <tr>
                             <td>
