@@ -102,3 +102,58 @@ hr {
 }
 
 
+.old_school_table {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-color: #CCC #515151 #515151 #CCC;
+    border-spacing: 0.5rem;
+    border-collapse: separate;
+
+    tr {
+    }
+    td {
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        border-width: 0.1rem;
+        border-style: solid;
+        border-color: #515151 #CCC #CCC #515151;
+    }
+    @media @da_baseline {
+        dispalay: block;
+        width: 100%;
+
+        tr, td {
+            display: block;
+        }
+        td {
+            margin-bottom: 0.5rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+    @media @da_x_small {
+        display: table;
+
+        tr {
+            display: table-row;
+        }
+        td {
+            display: table-cell;
+            margin-bottom: 0;
+        }
+        img {
+            width: auto;
+        }
+    }
+}
+
+

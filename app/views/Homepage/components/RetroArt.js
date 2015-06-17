@@ -102,6 +102,22 @@ export default class RetroArt extends React.Component {
 
                     <hr className="rainbow_gradient" />
                 </section>
+                <section class="bellmaker_container geocities_me">
+                    <h3 style="text-align: center;">Don't ever trust dolphins!</h3>
+                    <table class="old_school_table">
+                        <tr>
+                            <td>
+                                <div class="dancing_baby"></div>
+                                <p style="color: #FF0;text-align: center;">&amp;nbsp;</p>
+                                <div class="centered_image">
+                                    <div data-sprite="tripod_125x71"></div>
+                                </div>
+                            </td>
+                            <td><div class="centered_image"><img src="/images/homepage/power_rangers_500x375.gif" /></div></td>
+                        </tr>
+                    </table>
+                    <hr class="rainbow_gradient" />
+                </section>
             </article>
         );
     }
