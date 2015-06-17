@@ -25,25 +25,22 @@ export default class DateRender extends React.Component {
     };
 
     leadDecimal = (num, places) => {
-        var sigFig,
-            zeroes = '',
+        var sigFig = 2,
+            zeroes = '', addZeroes,
             newNum = num.toString(),
             _t = 0;
 
-        if (places === undefined) {
-            sigFig = 2;
-        }
-        else {
+        if (places !== undefined) {
             sigFig = places;
         }
+        sigFig = sigFig - newNum.length;
+
         while (_t < sigFig) {
             zeroes = zeroes + '0';
             _t = _t + 1;
         }
-        window.console.log(sigFig, zeroes);
-        if (newNum.length === 1) {
-            newNum = zeroes + newNum;
-        }
+        newNum = zeroes + newNum;
+
         return newNum;
     };
 
@@ -272,7 +269,7 @@ export default class DateRender extends React.Component {
     render() {
         let checkIfDate = Date.parse(this.props.date);
 
-        if (isNaN(checkIfDate) === false || this.props.date !== undefined) {
+        if (isNaN(checkIfDate) === false || this.props.date !== '') {
             let date = new Date(this.props.date);
             let dateObj = this.makeDateObj(date);
             let dateFormat = this.getFormatArray(this.props.format);
