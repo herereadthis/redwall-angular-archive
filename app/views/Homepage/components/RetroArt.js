@@ -33,12 +33,10 @@ export default class RetroArt extends React.Component {
         return nextProps.timestamp !== this.props.timestamp;
     }
 
-    hitCounterWidth = () => {
-        var minWidth = 0.4 + 2.2 * this.props.hitCounterFigures;
-
-        return {
-            minWidth: `${minWidth}rem`
-        }
+    dataSprite = (sprite) => {
+        return (
+            <div data-sprite={sprite}/>
+        )
     };
 
     render() {
@@ -73,54 +71,57 @@ export default class RetroArt extends React.Component {
                     </h3>
 
                     <div id="hit_counter">
-                        <div>
-                            <p>~~Congratulations, you are the</p>
-                        </div>
+                        <div><p>~~Congratulations, you are the</p></div>
                         <HitCounter figures={this.props.hitCounterFigures}
                                     path={this.state.hitCounterPath}
                                     flux={this.props.flux}/>
-                        <div>
-                            <p>visitor to this site!~~</p>
-                        </div>
+                        <div><p>visitor to this site!~~</p></div>
                     </div>
+
                     <div className="centered_image" style={addPadding(1)}>
-                        <div data-sprite="broken_image"></div>
+                        {this.dataSprite('broken_image')}
                     </div>
+
                     <div id="email_joke">
-                        <div>
-                            <p>My Email:</p>
-                        </div>
-                        <div className="icon_box">
-                            <div data-sprite="email"></div>
-                        </div>
+                        <div><p>My Email:</p></div>
+                        <div className="icon_box">{this.dataSprite('email')}</div>
                         <div>
                             <p><a href="mailto:herereadthis@hotmail.com">herereadthis@hotmail.com</a>
                             </p>
                         </div>
                     </div>
+
                     <div className="centered_image" style={addPadding(1)}>
                         <img
                             src="http://herereadthis.com/build/images/homepage/under_construction_128x40.gif"
                             width={128} height={31}/>
                     </div>
 
-                    <hr className="rainbow_gradient" />
+                    <hr className="rainbow_gradient"/>
                 </section>
-                <section class="bellmaker_container geocities_me">
+
+                <section className="bellmaker_container geocities_me">
                     <h3 style={tca}>Don't ever trust dolphins!</h3>
-                    <table class="old_school_table">
+
+                    <table className="old_school_table">
                         <tr>
                             <td>
-                                <div class="dancing_baby"></div>
-                                <p style="color: #FF0;text-align: center;">&amp;nbsp;</p>
-                                <div class="centered_image">
-                                    <div data-sprite="tripod_125x71"></div>
+                                <div className="dancing_baby"></div>
+                                <p style={tca}>&amp;nbsp;</p>
+                                <div className="centered_image">
+                                    {this.dataSprite('tripod_125x71')}
                                 </div>
                             </td>
-                            <td><div class="centered_image"><img src="/images/homepage/power_rangers_500x375.gif" /></div></td>
+                            <td>
+                                <div className="centered_image">
+                                    <img
+                                        src="http://herereadthis.com/build/images/homepage/power_rangers_500x375.gif"/>
+                                </div>
+                            </td>
                         </tr>
                     </table>
-                    <hr class="rainbow_gradient" />
+
+                    <hr class="rainbow_gradient"/>
                 </section>
             </article>
         );

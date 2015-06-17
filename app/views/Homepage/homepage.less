@@ -67,6 +67,7 @@ hr {
 }
 
 @icon_size_retina: 10rem 20rem;
+@icon_size_full: 20rem 40rem;
 [data-sprite] {
     background-image: url("@{img_path}icon_logo_sprites.png");
     background-repeat: no-repeat;
@@ -93,6 +94,36 @@ hr {
         background-position: 0.4rem 0.4rem;
     }
 }
+[data-sprite="tripod_125x71"] {
+    background-size: @icon_size_full;
+    width: 12.5rem;
+    height: 7.1rem;
+    background-position: 0rem -30rem;
+}
+
+
+.geocities_me {
+    h3, p, li {
+        color: #FF0;
+    }
+    h3 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+    p, li {
+        font-size: 1.5rem;
+        line-height: 2.0rem;
+    }
+    ul {
+        padding: 0 0 2rem 0;
+    }
+    li {
+        padding: 0 0 0rem 2rem;
+        list-style-type: none;
+        background: transparent  url("@{img_homepage}ball_14x14.gif") scroll no-repeat 0 0.2rem;
+    }
+}
+
 
 .rainbow_gradient {
     background-image: linear-gradient(90deg, #000020 0%, #000871 5%, #0021c2 10%, #004ff7 15%,

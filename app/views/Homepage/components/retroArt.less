@@ -211,3 +211,44 @@
         }
     }
 }
+
+
+.dancing_baby {
+    margin: 0 auto;
+    background-image: url("@{img_path}dancing_baby_170x230.gif");
+
+    @media @da_baseline {
+        width: 8.5rem;
+        height: 11.5rem;
+        background-size: 8.5rem 11.5rem;
+    }
+    @media @da_2x_small {
+        width: 10.2rem;
+        height: 13.8rem;
+        background-size: 10.2rem 13.8rem;
+    }
+    @media @da_small {
+        width: 17rem;
+        height: 23rem;
+        background-size: 17rem 23rem;
+    }
+
+    body > header & {
+        position: absolute;
+        top: 0;
+        @media @da_baseline {
+            right: 0;
+        }
+        @media @da_medium {
+            right: auto;
+            left: 50%;
+            margin-left: (@pw_medium / 2) - 17;
+        }
+        @media @da_large {
+            margin-left: (@pw_large / 2) - 17;
+        }
+        @media @da_x_large {
+            margin-left: (@pw_large / 2) - 17;
+        }
+    }
+}
