@@ -26,7 +26,7 @@ export default class DateRender extends React.Component {
 
     leadDecimal = (num, places) => {
         var sigFig = 2,
-            zeroes = '', addZeroes,
+            zeroes = '',
             newNum = num.toString(),
             _t = 0;
 
@@ -46,7 +46,7 @@ export default class DateRender extends React.Component {
 
     makeDateObj = (date) => {
         var yyyy, yy, M, MMM, MMMM, w, www, wwww, d,
-            H, h, a, m, s, sss,
+            H, h, a, m, s, S,
             tz, dateObj;
 
         // years
@@ -87,7 +87,9 @@ export default class DateRender extends React.Component {
 
         // seconds
         s = date.getSeconds();
-        sss = date.getMilliseconds();
+
+        // milliseconds
+        S = date.getMilliseconds();
 
         // timezone
         tz = date.getTimezoneOffset();
@@ -115,8 +117,8 @@ export default class DateRender extends React.Component {
             mm: this.leadDecimal(m),
             s,
             ss: this.leadDecimal(s),
-            sss,
-            ssss: this.leadDecimal(sss,3),
+            S,
+            SS: this.leadDecimal(S,3),
             tz
         };
         window.console.log(dateObj);
@@ -184,10 +186,10 @@ export default class DateRender extends React.Component {
                 regex: /m+/
             },
             seconds: {
-                regex: /^([^s]*)(s{1,2})([^s]*)$/
+                regex: /s+/
             },
             milliseconds: {
-                regex: /s{3,}/
+                regex: /S+/
             },
             timezone: {
                 regex: /tz/
@@ -195,15 +197,16 @@ export default class DateRender extends React.Component {
         };
 
         var _l, _m,
-            dateStamp  = '',
-            timeStamp = null;
+            dateStamp = null,
+            timeStamp = null,
+            dateTime = '';
 
         for (_m in dateTypes) {
             dateTypes[_m].exists = false;
 
         }
         let dateTypeString = dateValues.join('');
-
+        window.console.log(dateTypes.seconds.regex.test(dateTypeString), dateTypeString);
         for (_l in dateTypes) {
             if (dateTypes[_l].regex.test(dateTypeString) === true) {
                 dateTypes[_l].exists = true;
@@ -242,9 +245,29 @@ export default class DateRender extends React.Component {
         if (dateTypes.hours.exists === true) {
 
         }
+        if (dateTypes.hours.exists === true) {
+            timeStamp = `${dateObj.HH}`;
+            if (dateTypes.minutes.exists === true) {
+                timeStamp = `${timeStamp}:${dateObj.mm}`;
+                if (dateTypes.seconds.exists === true) {
+                    timeStamp = `${timeStamp}:${dateObj.ss}`;
+                    if (dateTypes.milliseconds.exists === true) {
+                        timeStamp = `${timeStamp}:${dateObj.SS}`;
+                    }
+                }
+            }
+        }
+        if (dateStamp !== null) {
+            dateTime = dateStamp;
+            if (timeStamp !== null) {
+                dateTime = `${dateTime}T${timeStamp}`;
+            }
+        }
+        else if (timeStamp !== null) {
+            dateTime = timeStamp;
+        }
 
-
-        return dateStamp;
+        return dateTime;
     };
 
     getDateValues = (dateObj, dateFormat) => {
@@ -278,7 +301,7 @@ export default class DateRender extends React.Component {
             let dateStamp = this.getDateTime(dateObj, dateFormat);
             return (
                 <time dateTime={dateStamp}
-                      property={this.props.rdf}>{formattedDate}|{dateStamp}|</time>
+                      property={this.props.rdf}>{formattedDate}</time>
             );
 
         }
