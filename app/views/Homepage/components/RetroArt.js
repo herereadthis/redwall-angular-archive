@@ -7,21 +7,6 @@ import AppStore from 'AppStore';
 import HitCounter from './HitCounter';
 import DateRender from 'components/DateRender';
 
-
-/*
-
- <h3 className="before_text_1">
- <span>foo</span>
- <DateRender date={this.props.timestamp.date}
- format="d MMMM yyyy hh:mm:ss"
- rdf="dc:modified"/>
- <span>foo</span>
- </h3>
- <time dateTime={dateTimeRDF}
- property="dc:modified">{dateTime}</time>
-
- */
-
 export default class RetroArt extends React.Component {
 
     constructor() {
@@ -47,31 +32,6 @@ export default class RetroArt extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {
         return nextProps.timestamp !== this.props.timestamp;
     }
-
-    getDateRender = (date) => {
-            return (
-                <span>
-                    <span>bar</span>
-                <DateRender date={date}
-                            format="d MMMM yyyy hh:mm:ss"
-                            rdf="dc:modified"/>
-                    </span>
-
-            )
-    };
-
-    makeTimestamp = () => {
-        let ts = this.props.timestamp;
-
-        let dateTimeRDF = `${ts.yyyy}-${ts.MM}-${ts.dd}`;
-        let dateTime = `${ts.dd} ${ts.MMMM} ${ts.yyyy}`;
-        return (
-            <h3 className="before_text_1">
-                <span>This page was created by Jimmy Ha. Last updated: </span>
-                {this.getDateRender(ts.date)}
-            </h3>
-        )
-    };
 
     hitCounterWidth = () => {
         var minWidth = 0.4 + 2.2 * this.props.hitCounterFigures;

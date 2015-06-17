@@ -10,6 +10,7 @@ export default class DateRender extends React.Component {
 
     static testRegex = /(([a-z])+|([^a-z0-9]*))/gi;
     static keyRegex = /^\w+$/;
+    static concatRegex = /(\w)\1*/g;
 
     static propTypes = {
         date: React.PropTypes.string.isRequired,
@@ -19,14 +20,29 @@ export default class DateRender extends React.Component {
 
     static defaultProps = {
         date: '',
-        format: 'MM/dd/yy',
-        rdf: 'dc:modified'
+        format: 'yyyy-MM-dd',
+        rdf: 'dc:date'
     };
 
-    leadDecimal = (num) => {
-        var newNum = num.toString();
+    leadDecimal = (num, places) => {
+        var sigFig,
+            zeroes = '',
+            newNum = num.toString(),
+            _t = 0;
+
+        if (places === undefined) {
+            sigFig = 2;
+        }
+        else {
+            sigFig = places;
+        }
+        while (_t < sigFig) {
+            zeroes = zeroes + '0';
+            _t = _t + 1;
+        }
+        window.console.log(sigFig, zeroes);
         if (newNum.length === 1) {
-            newNum = '0' + newNum;
+            newNum = zeroes + newNum;
         }
         return newNum;
     };
@@ -103,32 +119,47 @@ export default class DateRender extends React.Component {
             s,
             ss: this.leadDecimal(s),
             sss,
-            ssss: this.leadDecimal(sss),
+            ssss: this.leadDecimal(sss,3),
             tz
         };
-
+        window.console.log(dateObj);
         return dateObj;
     };
 
     getFormatArray = (format) => {
         let formatArray = format.match(DateRender.testRegex),
             cleanArray  = [],
-            _i;
+            concatFormat = [],
+            _i, _k;
 
         for (_i = 0; _i < formatArray.length; _i = _i + 1) {
             if (formatArray[_i] !== '') {
-                cleanArray.push(formatArray[_i]);
+                // in case DateRender is attempting to format a string like
+                // yyyyMMdd or hh:mma
+                concatFormat = formatArray[_i].match(DateRender.concatRegex);
+
+                if (concatFormat !== null) {
+                    for (_k = 0; _k < concatFormat.length; _k = _k + 1) {
+                        cleanArray.push(concatFormat[_k]);
+                    }
+                }
+                else {
+                    cleanArray.push(formatArray[_i]);
+                }
             }
         }
         return cleanArray;
     };
+
     // Array interesection http://stackoverflow.com/questions/16227197/
+    /*
     interesect = (array1, array2) => {
         var commonValues = array1.filter((value) => {
             return array2.indexOf(value) > -1;
         });
         return commonValues;
     };
+    */
 
     getDateTime = (dateObj, dateFormat) => {
         let dateValues = [],
@@ -141,37 +172,67 @@ export default class DateRender extends React.Component {
         }
         var dateTypes = {
             years: {
-                match: ['yyyy', 'yy']
+                regex: /y+/
             },
             months: {
-                match: ['M', 'MM', 'MMM', 'MMMM']
+                regex: /M+/
             },
             days: {
-                match: ['d', 'dd']
+                regex: /d+/
+            },
+            hours: {
+                regex: /h+/i
+            },
+            minutes: {
+                regex: /m+/
+            },
+            seconds: {
+                regex: /^([^s]*)(s{1,2})([^s]*)$/
+            },
+            milliseconds: {
+                regex: /s{3,}/
+            },
+            timezone: {
+                regex: /tz/
             }
         };
 
-        var _l, _m, _n,
-            existArray = [],
-            dateStamp  = '';
+        var _l, _m,
+            dateStamp  = '',
+            timeStamp = null;
 
         for (_m in dateTypes) {
             dateTypes[_m].exists = false;
 
         }
+        let dateTypeString = dateValues.join('');
+
+        for (_l in dateTypes) {
+            if (dateTypes[_l].regex.test(dateTypeString) === true) {
+                dateTypes[_l].exists = true;
+            }
+        }
+
+        /*
+        var existArray = [];
         for (_l in dateTypes) {
             if (this.interesect(dateTypes[_l].match, dateValues).length !== 0) {
                 dateTypes[_l].exists = true;
             }
+            if (dateTypes[_l].regex.test()
             existArray.push(dateTypes[_l].exists);
         }
+        */
+
         // timestamp can be yyyy-MM-dd, yyyy-MM, MM-dd, or yyyy,
         // but not yyyy-dd, mm, or dd
         if (dateTypes.years.exists === true) {
             dateStamp = `${dateObj.yyyy}`;
+            window.console.log(dateStamp);
 
             if (dateTypes.months.exists === true) {
                 dateStamp = `${dateStamp}-${dateObj.MM}`;
+                window.console.log(dateStamp);
             }
             if (dateTypes.days.exists === true) {
                 dateStamp = `${dateStamp}-${dateObj.dd}`;
@@ -181,6 +242,11 @@ export default class DateRender extends React.Component {
             dateTypes.days.exists === true) {
             dateStamp = `${dateObj.MM}-${dateObj.dd}`
         }
+        if (dateTypes.hours.exists === true) {
+
+        }
+
+
         return dateStamp;
     };
 
@@ -199,6 +265,9 @@ export default class DateRender extends React.Component {
         return dateValues.join('');
     };
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.date !== this.props.date;
+    }
 
     render() {
         let checkIfDate = Date.parse(this.props.date);
@@ -212,7 +281,7 @@ export default class DateRender extends React.Component {
             let dateStamp = this.getDateTime(dateObj, dateFormat);
             return (
                 <time dateTime={dateStamp}
-                      property={this.props.rdf}>{formattedDate}</time>
+                      property={this.props.rdf}>{formattedDate}|{dateStamp}|</time>
             );
 
         }
