@@ -61,9 +61,6 @@ export default class RetroArt extends React.Component {
                             width={88} height={31}/>
                     </div>
 
-
-                    <br />
-
                     <h3 className="before_text_1">
                         <span>This page was created by Jimmy Ha. Last updated: </span>
                         <DateRender date={this.props.timestamp.date}
@@ -78,7 +75,6 @@ export default class RetroArt extends React.Component {
                         <HitCounter figures={this.props.hitCounterFigures}
                                     path={this.state.hitCounterPath}
                                     flux={this.props.flux}/>
-
                         <div>
                             <p>visitor to this site!~~</p>
                         </div>
@@ -103,6 +99,8 @@ export default class RetroArt extends React.Component {
                             src="http://herereadthis.com/build/images/homepage/under_construction_128x40.gif"
                             width={128} height={31}/>
                     </div>
+
+                    <hr className="rainbow_gradient" />
                 </section>
             </article>
         );
