@@ -39,6 +39,10 @@ export default class RetroArt extends React.Component {
         )
     };
 
+    bgPos = {
+        backgroundPosition: '50% 0'
+    };
+
     render() {
         var addPadding = (pad) => {
             return {
@@ -51,9 +55,8 @@ export default class RetroArt extends React.Component {
         };
 
         return (
-            <article id="retro_art" className="starfield cinnamon_fantasy"
-                     data-cinnamon-fantasy data-parallax-scroll
-                     data-parallax-speed="-50">
+            <article id="retro_art" className="starfield cinnamon_fantasy parallax_scroll"
+                     data-cinnamon-fantasy style={this.bgPos}>
                 <h2>This website is all that and a bag of chips!</h2>
                 <section className="bellmaker_container">
 
@@ -121,7 +124,7 @@ export default class RetroArt extends React.Component {
                         </tr>
                     </table>
 
-                    <hr class="rainbow_gradient"/>
+                    <hr className="rainbow_gradient"/>
                 </section>
             </article>
         );

@@ -121,7 +121,6 @@ export default class DateRender extends React.Component {
             SS: this.leadDecimal(S,3),
             tz
         };
-        window.console.log(dateObj);
         return dateObj;
     };
 
@@ -206,7 +205,6 @@ export default class DateRender extends React.Component {
 
         }
         let dateTypeString = dateValues.join('');
-        window.console.log(dateTypes.seconds.regex.test(dateTypeString), dateTypeString);
         for (_l in dateTypes) {
             if (dateTypes[_l].regex.test(dateTypeString) === true) {
                 dateTypes[_l].exists = true;
@@ -228,11 +226,9 @@ export default class DateRender extends React.Component {
         // but not yyyy-dd, mm, or dd
         if (dateTypes.years.exists === true) {
             dateStamp = `${dateObj.yyyy}`;
-            window.console.log(dateStamp);
 
             if (dateTypes.months.exists === true) {
                 dateStamp = `${dateStamp}-${dateObj.MM}`;
-                window.console.log(dateStamp);
             }
             if (dateTypes.days.exists === true) {
                 dateStamp = `${dateStamp}-${dateObj.dd}`;

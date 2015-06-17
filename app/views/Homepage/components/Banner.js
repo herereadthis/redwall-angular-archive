@@ -6,10 +6,13 @@ import PopupBoxSimulator from './PopupBoxSimulator';
 
 import AppActions from 'AppActions';
 
+import ParallaxScroll from 'components/ParallaxScroll';
+
 let bannerHasImg = null;
 
 
 export default class Banner extends React.Component {
+//class Banner extends React.Component {
 
     constructor() {
         super();
@@ -31,9 +34,19 @@ export default class Banner extends React.Component {
         }
     }
 
+
+    componentDidMount() {
+        ParallaxScroll.moveBackground(-50, this.bgPos);
+    }
+
     shouldComponentUpdate(nextProps, nextState) {
         return nextProps.ninetiesImg !== this.props.ninetiesImg;
     }
+
+
+    bgPos = {
+        backgroundPosition: '50% 0'
+    };
 
     handleClick = (e) => {
         e.preventDefault();
@@ -111,7 +124,8 @@ export default class Banner extends React.Component {
     render() {
 
         return (
-            <header role="banner" className="starfield">
+            <header role="banner" className="starfield parallax_scroll"
+                style={this.bgPos}>
                 <div className="bellmaker_container">
                     <div id="construction" role="presentation"></div>
                     <div id="header_panel" data-module="banner_image">
@@ -129,4 +143,6 @@ export default class Banner extends React.Component {
         );
     }
 }
+
+//export default ParallaxScroll(Banner);
 

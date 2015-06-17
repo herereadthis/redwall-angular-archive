@@ -8,6 +8,9 @@ import RetroArt from './components/RetroArt';
 export default class Homepage extends React.Component {
     constructor() {
         super();
+        this.state = {
+            scrollTop: 0
+        }
     }
 
     render() {
