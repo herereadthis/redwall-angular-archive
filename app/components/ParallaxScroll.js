@@ -36,12 +36,49 @@ export default class ParallaxScroll {
 
     };
 
-    static moveBackground = (bgOffset, bgStyle, domHeight) => {
+    static setBackground = (parallaxSpeed, bgStyle, domHeight, offFromTop, starfield) => {
+        var dScroll = document.body.scrollTop,
+            wHeight = window.innerHeight,
+            scrollSpeed, yPosition,
+            newBgPosition = null;
+
+        // logic:
+        // 1. the top edge of the element is inside the window during scrolling,
+        // 2. the bottom edge of the element has not been exceeded by scrolling
+        if (dScroll + wHeight > offFromTop &&
+            offFromTop + domHeight > dScroll) {
+
+            // scroll speed is a percentage of the actual scrolling
+            scrollSpeed = parallaxSpeed / 100;
+            // y-position of background position
+            yPosition = -1 * Math.round(dScroll * scrollSpeed);
+
+            // combine exising x-position and y-position of background-position
+            newBgPosition = `${bgStyle[0]} ${yPosition}px`;
+
+            starfield.style.backgroundPosition = newBgPosition;
+        }
+        return newBgPosition;
+    };
+
+    static moveBackground = (parallaxSpeed, starfield) => {
+        var domHeight, offFromTop, bgStyle, bgPosition, newBgPosition;
+
+        domHeight = starfield.offsetHeight;
+        offFromTop = Math.round(starfield.getBoundingClientRect().top);
+        bgStyle = getComputedStyle(starfield)['background-position'];
+        bgPosition = ParallaxScroll.getBgPosition(bgStyle);
+
         window.addEventListener('scroll', function (event) {
-            ParallaxScroll.foobar();
+            ParallaxScroll.setBackground(
+                parallaxSpeed, bgPosition, domHeight, offFromTop, starfield
+            );
+
+            //window.console.log(newBgPosition);
+            //return newBgPosition;
+
         }, true);
-        var bgPosition = ParallaxScroll.getBgPosition(bgStyle);
-        window.console.log(bgPosition, domHeight);
+
     };
 
     static killScrollListener = () => {

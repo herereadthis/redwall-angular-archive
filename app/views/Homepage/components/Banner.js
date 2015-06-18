@@ -36,18 +36,13 @@ export default class Banner extends React.Component {
 
 
     componentDidMount() {
-        var starfield, starFieldStyle, domHeight;
+        var starfield = React.findDOMNode(this.refs.starfield);
 
-        starfield = React.findDOMNode(this.refs.starfield);
-        starFieldStyle = getComputedStyle(starfield)['background-position'];
-        domHeight = starfield.offsetHeight;
+        ParallaxScroll.moveBackground(-50, starfield);
 
-        ParallaxScroll.moveBackground(-50, starFieldStyle, domHeight);
-
-        window.addEventListener('resize', function (event) {
+        window.addEventListener('resize', function () {
             ParallaxScroll.killScrollListener();
-            domHeight = starfield.offsetHeight;
-            ParallaxScroll.moveBackground(-50, starFieldStyle, domHeight);
+            ParallaxScroll.moveBackground(-50, starfield);
         }, true);
     }
 

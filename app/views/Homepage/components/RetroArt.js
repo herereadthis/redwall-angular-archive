@@ -6,6 +6,7 @@ import AppActions from 'AppActions';
 import AppStore from 'AppStore';
 import HitCounter from './HitCounter';
 import DateRender from 'components/DateRender';
+import ParallaxScroll from 'components/ParallaxScroll';
 
 export default class RetroArt extends React.Component {
 
@@ -27,6 +28,15 @@ export default class RetroArt extends React.Component {
             return;
         }
         this.props.flux.getActions(AppActions.ID).fetchTimestamp(true);
+
+        var starfield = React.findDOMNode(this.refs.starfield);
+
+        ParallaxScroll.moveBackground(-50, starfield);
+
+        window.addEventListener('resize', function () {
+            ParallaxScroll.killScrollListener();
+            ParallaxScroll.moveBackground(-50, starfield);
+        }, true);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -37,10 +47,6 @@ export default class RetroArt extends React.Component {
         return (
             <div data-sprite={sprite}/>
         )
-    };
-
-    bgPos = {
-        backgroundPosition: '50% 0'
     };
 
     render() {
@@ -56,7 +62,7 @@ export default class RetroArt extends React.Component {
 
         return (
             <article id="retro_art" className="starfield cinnamon_fantasy parallax_scroll"
-                     data-cinnamon-fantasy style={this.bgPos}>
+                     data-cinnamon-fantasy ref="starfield">
                 <h2>This website is all that and a bag of chips!</h2>
                 <section className="bellmaker_container">
 
