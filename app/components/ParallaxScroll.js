@@ -8,7 +8,7 @@ export default class ParallaxScroll {
 
     static getBgPosition = (bgStyle) => {
         var bgPosition, _i;
-        bgPosition = bgStyle.backgroundPosition.split(' ');
+        bgPosition = bgStyle.split(' ');
 
         // you can state background position as one value that doubles for x/y.
         // if so, make both values equal.
@@ -26,7 +26,7 @@ export default class ParallaxScroll {
             else if (bgPosition[_i] === "bottom" || bgPosition[_i] === "right") {
                 bgPosition[_i] = '100%';
             }
-            if ( /%/.test(bgPosition[_i]) ) {
+            if (/%/.test(bgPosition[_i]) === true) {
                 if (parseInt(bgPosition[_i], 10) === 0) {
                     bgPosition[_i] = 0;
                 }
@@ -36,12 +36,17 @@ export default class ParallaxScroll {
 
     };
 
-    static moveBackground = (bgOffset, bgStyle) => {
+    static moveBackground = (bgOffset, bgStyle, domHeight) => {
         window.addEventListener('scroll', function (event) {
             ParallaxScroll.foobar();
         }, true);
         var bgPosition = ParallaxScroll.getBgPosition(bgStyle);
-        window.console.log(bgPosition);
+        window.console.log(bgPosition, domHeight);
     };
+
+    static killScrollListener = () => {
+        window.removeEventListener('scroll', function () {
+        }, true);
+    }
 
 };
