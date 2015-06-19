@@ -2,10 +2,6 @@
 
 export default class ParallaxScroll {
 
-    static foobar = () => {
-        window.console.log(document.body.scrollTop);
-    };
-
     static getBgPosition = (bgStyle) => {
         var bgPosition, _i;
         bgPosition = bgStyle.split(' ');
@@ -23,7 +19,8 @@ export default class ParallaxScroll {
             else if (bgPosition[_i] === "top" || bgPosition[_i] === "left") {
                 bgPosition[_i] = '0%';
             }
-            else if (bgPosition[_i] === "bottom" || bgPosition[_i] === "right") {
+            else if (bgPosition[_i] === "bottom" ||
+                bgPosition[_i] === "right") {
                 bgPosition[_i] = '100%';
             }
             if (/%/.test(bgPosition[_i]) === true) {
@@ -36,11 +33,11 @@ export default class ParallaxScroll {
 
     };
 
-    static setBackground = (parallaxSpeed, bgStyle, domHeight, offFromTop, starfield) => {
+    static setBackground = (
+        parallaxSpeed, bgStyle, domHeight, offFromTop, starfield) => {
         var dScroll = document.body.scrollTop,
             wHeight = window.innerHeight,
-            scrollSpeed, yPosition,
-            newBgPosition = null;
+            scrollSpeed, yPosition, newBgPosition;
 
         // logic:
         // 1. the top edge of the element is inside the window during scrolling,
@@ -58,11 +55,10 @@ export default class ParallaxScroll {
 
             starfield.style.backgroundPosition = newBgPosition;
         }
-        return newBgPosition;
     };
 
     static moveBackground = (parallaxSpeed, starfield) => {
-        var domHeight, offFromTop, bgStyle, bgPosition, newBgPosition;
+        var domHeight, offFromTop, bgStyle, bgPosition;
 
         domHeight = starfield.offsetHeight;
         offFromTop = Math.round(starfield.getBoundingClientRect().top);
@@ -73,17 +69,11 @@ export default class ParallaxScroll {
             ParallaxScroll.setBackground(
                 parallaxSpeed, bgPosition, domHeight, offFromTop, starfield
             );
-
-            //window.console.log(newBgPosition);
-            //return newBgPosition;
-
         }, true);
-
     };
 
     static killScrollListener = () => {
         window.removeEventListener('scroll', function () {
         }, true);
     }
-
 };
