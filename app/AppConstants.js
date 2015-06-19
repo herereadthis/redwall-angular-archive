@@ -1,5 +1,7 @@
 'use strict';
 
+import React from 'react';
+
 export default class AppConstants {
 
     static HomepageConfig = {
@@ -50,6 +52,12 @@ export default class AppConstants {
                 return str;
             }
         }
-    }
+    };
+
+    static DataSprite = (sprite) => {
+        return (
+            <div data-sprite={sprite}/>
+        )
+    };
 
 };

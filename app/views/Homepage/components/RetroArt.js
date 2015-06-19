@@ -4,6 +4,7 @@ import React from 'react';
 
 import AppActions from 'AppActions';
 import AppStore from 'AppStore';
+import AppConstants from 'AppConstants';
 import HitCounter from './HitCounter';
 import DateRender from 'components/DateRender';
 import ParallaxScroll from 'components/ParallaxScroll';
@@ -42,12 +43,6 @@ export default class RetroArt extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {
         return nextProps.timestamp !== this.props.timestamp;
     }
-
-    dataSprite = (sprite) => {
-        return (
-            <div data-sprite={sprite}/>
-        )
-    };
 
     render() {
         var addPadding = (pad) => {
@@ -88,12 +83,12 @@ export default class RetroArt extends React.Component {
                     </div>
 
                     <div className="centered_image" style={addPadding(1)}>
-                        {this.dataSprite('broken_image')}
+                        {AppConstants.DataSprite('broken_image')}
                     </div>
 
                     <div id="email_joke">
                         <div><p>My Email:</p></div>
-                        <div className="icon_box">{this.dataSprite('email')}</div>
+                        <div className="icon_box">{AppConstants.DataSprite('email')}</div>
                         <div>
                             <p><a href="mailto:herereadthis@hotmail.com">herereadthis@hotmail.com</a>
                             </p>
@@ -118,7 +113,7 @@ export default class RetroArt extends React.Component {
                                 <div className="dancing_baby"></div>
                                 <p style={tca}>&amp;nbsp;</p>
                                 <div className="centered_image">
-                                    {this.dataSprite('tripod_125x71')}
+                                    {AppConstants.DataSprite('tripod_125x71')}
                                 </div>
                             </td>
                             <td>
