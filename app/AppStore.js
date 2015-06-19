@@ -69,20 +69,27 @@ export default class AppStore extends Store {
         let url = 'http://redwall.herereadthis.com/api/banner_image/';
         let updateCache = this.store90sImage();
 
-        if (updateCache === true || LocalStorageMethods.get(
-                AppStore.NINETIES_IMG.NAME) === undefined) {
-            LocalStorageMethods.set(
-                AppStore.NINETIES_IMG.NAME,
-                JSON.stringify(response.data)
-            )
+        if (updateCache === true ||
+            LocalStorageMethods.get(AppStore.NINETIES_IMG.NAME) === undefined) {
+
+            axios.get(url)
+                .then((response) => {
+                    LocalStorageMethods.set(
+                        AppStore.NINETIES_IMG.NAME,
+                        JSON.stringify(response.data)
+                    );
+                    this.setState({
+                        ninetiesImg: response.data
+                    });
+                }
+            );
         }
-        axios.get(url)
-            .then((response) => {
-                this.setState({
-                    ninetiesImg: response.data
-                });
-            }
-        );
+        if (LocalStorageMethods.get(AppStore.NINETIES_IMG.NAME) !== undefined) {
+            this.setState({
+                ninetiesImg: JSON.parse(
+                    LocalStorageMethods.get(AppStore.NINETIES_IMG.NAME))
+            });
+        }
     }
 
     store90sImage() {

@@ -41,7 +41,16 @@ export default class RetroArt extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.timestamp !== this.props.timestamp;
+        let makeUpdate = false;
+        if (nextProps.timestamp !== this.props.timestamp ||
+            nextProps.ninetiesImg !== this.props.ninetiesImg) {
+            makeUpdate = true;
+        }
+        return makeUpdate;
+    }
+
+    componentWillReceiveProps(nextProps) {
+        window.console.log(nextProps.ninetiesImg[0]);
     }
 
     render() {

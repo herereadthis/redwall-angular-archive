@@ -102,7 +102,7 @@ config = {
         new Webpack.optimize.DedupePlugin(),
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
-        new ExtractTextPlugin("styles/global.css"),
+        new ExtractTextPlugin("global.css"),
         new SaveAssetsJson({
             path: paths.build,
             filename: 'assets.json'
