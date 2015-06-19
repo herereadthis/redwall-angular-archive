@@ -14,15 +14,20 @@ export default class RetroRules extends React.Component {
     componentDidMount() {
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-    }
-
     render() {
 
+        var retroRulesStyle = {
+            backgroundColor: '#000',
+            paddingTop: '2rem'
+        };
+        var goAway = {
+            display: 'none'
+        };
+
         return (
-            <article id="retro_rules">
-                <h2>Here's some good advice I never follow.</h2>
-                <section class="bellmaker_container geocities_me">
+            <article id="retro_rules" style={retroRulesStyle}>
+                <h2 style={goAway}>Here's some good advice I never follow.</h2>
+                <section className="bellmaker_container geocities_me">
                     <h3>Here are 5 rules for life:</h3>
                     <ul>
                         <li>The secret to communication is remembering that what
@@ -38,8 +43,7 @@ export default class RetroRules extends React.Component {
                         <li>I am the company I keep.</li>
                     </ul>
 
-                    <hr class="rainbow_gradient"/>
-
+                    <hr className="rainbow_gradient" />
                 </section>
             </article>
         );
