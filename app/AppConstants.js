@@ -7,6 +7,19 @@ export default class AppConstants {
         hitCounterFigures: 7
     };
 
+    static LocalStorageMethods = {
+        set: (key, value) => {
+            localStorage[key] = value;
+        },
+        get: (item) => {
+            let obj = localStorage[item];
+            return AppConstants.StringMethods.parseString(obj);
+        },
+        remove: (key)=> {
+            localStorage.removeItem(key);
+        }
+    };
+
     static SessionStorageMethods = {
         set: (key, value) => {
             sessionStorage[key] = value;

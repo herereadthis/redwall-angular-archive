@@ -4,7 +4,7 @@ import { Store } from 'flummox';
 
 import AppActions from './AppActions';
 
-import {HomepageConfig, SessionStorageMethods} from './AppConstants';
+import {HomepageConfig, LocalStorageMethods, SessionStorageMethods} from './AppConstants';
 
 const watches = require('./assets/json/watches.json');
 
@@ -26,6 +26,7 @@ export default class AppStore extends Store {
 
     static ID = 'AppStore';
     static LAST_PATH_KEY = 'lastPath';
+    static CACHE_90S_IMAGE = 'cache90sImage';
 
     constructor(flux) {
         super();
@@ -42,6 +43,7 @@ export default class AppStore extends Store {
 
         this.registerAsync(appActionsIds.fetchTimestamp, this.fetchTimestamp);
         this.registerAsync(appActionsIds.fetch90sImage, this.fetch90sImage);
+        this.register(appActionsIds.store90sImage, this.store90sImage);
         this.registerAsync(appActionsIds.fetchHitCount, this.fetchHitCount);
         this.register(appActionsIds.getLastPath, this.getLastPath);
         this.register(appActionsIds.recordLastPath, this.recordLastPath);
@@ -65,6 +67,18 @@ export default class AppStore extends Store {
                 })
             })
     }
+    store90sImage() {
+        let cache90sImage = LocalStorageMethods.get(AppStore.CACHE_90S_IMAGE);
+
+        if (cache90sImage === undefined) {
+            let newCache = new Date();
+            LocalStorageMethods.set(AppStore.CACHE_90S_IMAGE, newCache);
+            cache90sImage = newCache;
+        }
+        window.console.log(cache90sImage)
+    }
+
+
     fetchHitCount(path) {
         window.console.log(path);
     }

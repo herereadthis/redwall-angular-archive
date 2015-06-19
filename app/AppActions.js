@@ -15,6 +15,10 @@ export default class AppActions extends Actions {
         return status;
     }
 
+    store90sImage(status) {
+        return status;
+    }
+
     async fetchHitCount(url) {
         return url;
     }
