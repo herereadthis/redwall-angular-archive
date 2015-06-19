@@ -26,7 +26,14 @@ export default class AppStore extends Store {
 
     static ID = 'AppStore';
     static LAST_PATH_KEY = 'lastPath';
-    static CACHE_90S_IMAGE = 'cache90sImage';
+    static CACHE_90S_IMG = {
+        CACHE: 86400000,
+        KEY: 'cache90sImage',
+        INDEX: 0
+    };
+    static NINETIES_IMG = {
+        NAME: 'ninetiesImg'
+    };
 
     constructor(flux) {
         super();
@@ -59,23 +66,43 @@ export default class AppStore extends Store {
     }
 
     fetch90sImage() {
-        let url = 'http://redwall.herereadthis.com/api/banner_image/?sort=hits';
+        let url = 'http://redwall.herereadthis.com/api/banner_image/';
+        let updateCache = this.store90sImage();
+
+        if (updateCache === true || LocalStorageMethods.get(
+                AppStore.NINETIES_IMG.NAME) === undefined) {
+            LocalStorageMethods.set(
+                AppStore.NINETIES_IMG.NAME,
+                JSON.stringify(response.data)
+            )
+        }
         axios.get(url)
             .then((response) => {
                 this.setState({
                     ninetiesImg: response.data
-                })
-            })
+                });
+            }
+        );
     }
+
     store90sImage() {
-        let cache90sImage = LocalStorageMethods.get(AppStore.CACHE_90S_IMAGE);
+        let cache90sImage, newCache, dateDiff, upDateCache;
+
+        cache90sImage = LocalStorageMethods.get(AppStore.CACHE_90S_IMG.KEY);
+        newCache = new Date();
+        upDateCache = false;
 
         if (cache90sImage === undefined) {
-            let newCache = new Date();
-            LocalStorageMethods.set(AppStore.CACHE_90S_IMAGE, newCache);
+            LocalStorageMethods.set(AppStore.CACHE_90S_IMG.KEY, newCache);
             cache90sImage = newCache;
+            upDateCache = true;
         }
-        window.console.log(cache90sImage)
+        dateDiff = Date.parse(newCache) - Date.parse(cache90sImage);
+
+        if (dateDiff - AppStore.CACHE_90S_IMG.CACHE > 0) {
+            upDateCache = true;
+        }
+        return upDateCache;
     }
 
 
