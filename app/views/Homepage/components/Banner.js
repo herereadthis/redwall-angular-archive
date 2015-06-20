@@ -146,7 +146,7 @@ export default class Banner extends React.Component {
             <header role="banner" ref="starfield" className="starfield parallax_scroll">
                 <div className="bellmaker_container">
                     <div id="construction" role="presentation"></div>
-                    <div id="header_panel" data-module="banner_image">
+                    <div id="header_panebl" data-module="banner_image">
                         <a href="" onClick={this.handleClick}>
                             <span>Stand by for a 90s image!</span>
                             <img src=""
