@@ -1,5 +1,7 @@
+@sizer: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
+@aHeightSizer: round((@sizer - 0.4rem) * 1.618 * 10) / 10;
+
 [data-module="banner_image"] {
-    box-sizing: border-box;
     margin-right: 1rem;
 
     a {
@@ -28,11 +30,9 @@
         display: block;
         float: left;
         margin: 0;
-        width: (2 / 12) * 100vw;
-        min-height: (2 / 12) * 100vw;
+        width: floor((((2 / 12) * 100vw) - 1) * 10) / 10;
 
         a {
-            min-height: (2 / 12) * 100vw;
         }
         span {
             font-size: 1.5rem;
@@ -40,13 +40,12 @@
         }
     }
     @media @da_small {
-        width: floor((((2 / 12) * @pw_small) - 1) * 10) / 10;
-        height: floor(((((2 / 12) * @pw_small) - 1.4rem) * 1.618) * 10) / 10;
-        min-height: 0;
+        @sizer: floor((((2 / 12) * @pw_small) - 1) * 10) / 10;
+        width: @sizer;
 
         a {
-            height: floor(((((2 / 12) * @pw_small) - 1.4rem) * 1.618 - 0.4rem) * 10) / 10;
-            min-height: 0;
+            width: @sizer - 0.4rem;
+            height: @aHeightSizer;
         }
         span {
             font-size: 1.5rem;
@@ -54,13 +53,13 @@
         }
     }
     @media @da_medium {
-        margin-left: 0;
         margin: 1rem 0 0 0rem;
-        width: floor((((2 / 12) * @pw_medium) - 1) * 10) / 10;
-        height: floor(((((2 / 12) * @pw_medium) - 1.4rem) * 1.618) * 10) / 10;
+        @sizer: floor((((2 / 12) * @pw_medium) - 1) * 10) / 10;
+        width: @sizer;
 
         a {
-            height: floor(((((2 / 12) * @pw_medium) - 1.4rem) * 1.618 - 0.4rem) * 10) / 10;
+            width: @sizer - 0.4rem;
+            height: @aHeightSizer;
         }
         span {
             font-size: 2rem;
@@ -68,11 +67,12 @@
         }
     }
     @media @da_large {
-        width: ((2 / 12) * @pw_large) - 2;
-        height: floor(((((2 / 12) * @pw_large) - 1.4rem) * 1.618) * 10) / 10;
+        @sizer: floor((((2 / 12) * @pw_large) - 2) * 10) / 10;
+        width: @sizer;
 
         a {
-            height: floor(((((2 / 12) * @pw_large) - 1.4rem) * 1.618 - 0.4rem) * 10) / 10;
+            width: @sizer - 0.4rem;
+            height: @aHeightSizer;
         }
         span {
             font-size: 2.5rem;

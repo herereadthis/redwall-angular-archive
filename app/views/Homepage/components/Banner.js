@@ -5,6 +5,7 @@ import React from 'react';
 import PopupBoxSimulator from './PopupBoxSimulator';
 
 import AppActions from 'AppActions';
+import AppStore from 'AppStore';
 
 import ParallaxScroll from 'components/ParallaxScroll';
 
@@ -51,14 +52,11 @@ export default class Banner extends React.Component {
         }, true);
     }
 
+
+
     shouldComponentUpdate(nextProps, nextState) {
         return nextProps.ninetiesImgSize !== this.props.ninetiesImgSize;
     }
-
-
-    bgPos = {
-        backgroundPosition: '50% 0'
-    };
 
     handleClick = (e) => {
         e.preventDefault();
@@ -135,22 +133,40 @@ export default class Banner extends React.Component {
         }
     */
     };
+    getBannerImage = () => {
+        let ninetiesImg = LocalStorageMethods.get(AppStore.NINETIES_IMG.NAME);
+        if (ninetiesImg !== undefined) {
+            ninetiesImg = JSON.parse(ninetiesImg);
+            let imgIndex = LocalStorageMethods.get(AppStore.NINETIES_IMG.INDEX_NAME);
+            let targetImg = ninetiesImg[imgIndex];
 
+            return (
+                <img src={targetImg.thumbnail} ref="bannerImage" />
+            )
+        }
+        else {
+            return null;
+        }
+
+    };
 
     render() {
-        window.console.log(
-            LocalStorageMethods.get('ninetiesImgIndex'),
-            this.props.ninetiesImgSize);
+        let ninetiesImg = LocalStorageMethods.get(AppStore.NINETIES_IMG.NAME);
+        if (ninetiesImg !== undefined) {
+            ninetiesImg = JSON.parse(ninetiesImg);
+        }
+        else {
+            ninetiesImg = null;
+        }
 
         return (
             <header role="banner" ref="starfield" className="starfield parallax_scroll">
                 <div className="bellmaker_container">
                     <div id="construction" role="presentation"></div>
-                    <div id="header_panebl" data-module="banner_image">
-                        <a href="" onClick={this.handleClick}>
+                    <div id="header_panel" data-module="banner_image" ref="bannerImg">
+                        <a href="" onClick={this.handleClick} ref="bannerAnchor">
                             <span>Stand by for a 90s image!</span>
-                            <img src=""
-                                 ref="bannerImage"/>
+                            {this.getBannerImage()}
                         </a>
                     </div>
                     <PopupBoxSimulator data={this.props.popupBox}>
