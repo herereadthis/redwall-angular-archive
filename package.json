@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "axios": "^0.5.4",
-    "bellmaker": "^0.4.14",
+    "bellmaker": "^0.4.16",
     "flummox": "^3.5.2",
     "less": "^2.5.1",
     "lodash": "^3.9.3",

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import AppConstants from 'AppConstants';
+import RileyFuArt from 'components/RileyFuArt.js';
 
 export default class RileyFu extends React.Component {
 
@@ -10,15 +11,24 @@ export default class RileyFu extends React.Component {
     }
 
     componentWillMount() {
+        window.console.log('asdf');
     }
 
     componentDidMount() {
+        var backgroundPosition = RileyFuArt.setBackgroundPosition();
+        var rileyFu =  React.findDOMNode(this.refs.rileyFu);
+
+        rileyFu.style.backgroundPosition = backgroundPosition;
+
+        window.addEventListener('resize', function () {
+            rileyFu.style.backgroundPosition = backgroundPosition;
+        }, true);
+
     }
 
     render() {
-
         return (
-            <article id="riley_fu">
+            <article id="riley_fu" ref="rileyFu">
                 <h2 className="bellmaker_container">I swear, I actually know <a href="/code/" title="Here, Read This Code">how to code</a>.</h2>
 
                 <section className="bellmaker_container">
