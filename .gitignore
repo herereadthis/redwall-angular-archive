@@ -1,9 +1,10 @@
-.git
-node_modules/
-dist
-.DS_Store
-.idea
+node_modules
 npm-debug.log
+dist
+.tmp
+.sass-cache
 bower_components
-app/assets.json
-app/timestamp.json
+.DS_store
+src/styles/main.css
+app/styles/
+app/json/min

@@ -1,0 +1,665 @@
+[
+    {
+        "date": "2015-02-22",
+        "title": "asdf",
+        "url": "asdf",
+        "image": "asdf",
+        "imageCredit": "asdf",
+        "source": "Vice",
+        "summary": "",
+        "sourceType": "Blog",
+        "author": "Kari Paul"
+    },
+    {
+        "date": "2015-02-21",
+        "title": "The History of Sex.com, the Most Contested Domain on the Internet",
+        "url": "http://motherboard.vice.com/read/the-history-of-sexcom-the-most-contested-domain-on-the-internet?utm_source=mbtwitter",
+        "source": "Vice",
+        "summary": "<p>Sex.com is a Pinterest for sex! I didn't know that (I had to look, it really is!)</p><p>Remember when we were younger and wish we squatted on all those website names during the first dot-com boom? Well it turns out, the ownership of sex.com is pretty messed up. Gary Kremen registered it in 1994, and magically some dude named Stephen Cohen stole it and made a shit ton of money on just selling ads. It was during the days before Google, so people would just type URLs into their browser, and sex is pretty easy. Anyway, what follows is the long and complicated legal troubles of owning a website with such a simple domain name.</p>",
+        "sourceType": "Blog",
+        "author": "Kari Paul"
+    },
+    {
+        "date": "2015-02-20",
+        "title": "How to be a &#39;bad girl&#39; in India",
+        "url": "http://www.bbc.com/news/blogs-trending-31535455",
+        "image": "http://news.bbcimg.co.uk/media/images/81112000/jpg/_81112820_62352bbc-e04e-4f92-a8b1-dfd27a2d910d.jpg",
+        "imageCredit": "Furqan Jawed, Roshan Shakeel, Sparsh Saxena, Jaiwant Pradhan, and Stuti Kothari",
+        "source": "BBC",
+        "summary": "<p>Here is some pretty good satire! The art was drawn by students at the Srishti School of Art, Design and Technology in Bangalore. The intent was to show things men could do, but women couldn&rsquo;t, and it&rsquo;s a parody of posters for what good boys do, from the 80s and 90s.</p>",
+        "sourceType": "news",
+        "author": [
+            "Samiha Nettikkara",
+            "Sam Judah"
+        ]
+    },
+    {
+        "date": "2015-02-19",
+        "title": "The Time Everyone &ldquo;Corrected&rdquo; the World’s Smartest Woman",
+        "url": "http://priceonomics.com/the-time-everyone-corrected-the-worlds-smartest/",
+        "image": "http://pix-media.s3.amazonaws.com/blog/907/montyhall_finalgoat2.png",
+        "source": "Priceonomics",
+        "summary": "<p>This story is about the time Marilyn vos Savant answered someone's question about solving the Monty Hall problem. Imagine if you are standing in front of 3 doors, and behind one door is a prize but behind the other two doors is a goat. Suppose you pick a door. Then someone else opens another door and reveals a goat. Now do you choose the door you first chose or do you choose the other unopened door?</p><p>The Monty Hall problem was one of the first things we were taught in probability class. It makes complete sense to me, but initially it does seem counterintuive.</p><p>Anyway, it turns out a lot of academics and very smart people were very angry at Marilyn vos Savant and tried to correct her. Hilarity.</p>",
+        "sourceType": "blog",
+        "author": "Zachary Crockett"
+    },
+    {
+        "date": "2015-02-18",
+        "title": "A Complete Guide to the Future of U.S. Freight Movement",
+        "url": "http://www.citylab.com/work/2014/10/a-complete-guide-to-the-future-of-us-freight-movement/381012/",
+        "image": "http://cdn.theatlantic.com/assets/media/img/posts/2014/10/DSC_9652/54716abdd.jpg",
+        "imageCredit": "Dan Glass",
+        "source": "Atlantic",
+        "summary": "",
+        "sourceType": "magazine",
+        "author": "Dan Glass"
+    },
+    {
+        "date": "2015-02-17",
+        "title": "The Other Side",
+        "url": "https://www.youtube.com/user/HondaVideo/OtherSide",
+        "image": "https://www.hondatheotherside.com/static/desktop/image/intro_background.jpg",
+        "source": "<p>This video is amazing. It&rsquo;s a 3-minute video about a guy driving his Honda Civic. But then oh wait! Press the &ldquo;R&rdquo; button and suddenly it's a 3-minute video about a guy driving his Honda Civic Type R. Just toggle back and forth! It&rsquo;s really cool!</p>",
+        "summary": "",
+        "sourceType": "Video",
+        "author": "HondaVideo"
+    },
+    {
+        "date": "2015-02-16",
+        "title": "Algorithm That Counts Rap Rhymes and Scouts Mad Lines",
+        "url": "http://mining4meaning.com/2015/02/13/raplyzer/",
+        "image": "https://mining4meaning.files.wordpress.com/2015/02/artists_en_20k_feb20.png",
+        "source": "Mining for Meaning",
+        "summary": "<p>This guy Eric made a tool to analyze assonance rhymes in rap lyrics. Basically, the tool see how many syllables rappers can string together in lyrics that rhyme. Well, it doesn&rsquo;t take a machine to tell you Inspectah Deck is the best. We all know that already.</p>",
+        "sourceType": "Blog",
+        "author": "Eric Malmi"
+    },
+    {
+        "date": "2015-02-15",
+        "title": "asdf",
+        "url": "asdf",
+        "image": "asdf",
+        "imageCredit": "asdf",
+        "source": "asdf",
+        "summary": "",
+        "sourceType": "asdf",
+        "author": "asdf"
+    },
+    {
+        "date": "2015-02-14",
+        "title": "asdf",
+        "url": "asdf",
+        "image": "asdf",
+        "imageCredit": "asdf",
+        "source": "asdf",
+        "summary": "",
+        "sourceType": "asdf",
+        "author": "asdf"
+    },
+    {
+        "date": "2015-02-13",
+        "title": "Bjork Previews MoMA Exhibition With Visually Stunning &lsquo;Black Lake&rsquo; Trailer",
+        "url": "http://www.rollingstone.com/music/videos/bjork-previews-moma-exhibition-with-visually-stunning-black-lake-trailer-20150213",
+        "video": "https://www.youtube.com/v/EiXQ5qaUGDI",
+        "videoCredit": "MoMAvideos",
+        "source": "Rolling Stone",
+        "summary": "",
+        "sourceType": "magazine",
+        "author": "Ryan Reed"
+    },
+    {
+        "date": "2015-02-12",
+        "title": "The network that runs the world",
+        "url": "http://www.bbc.com/future/story/20150209-the-network-that-runs-the-world",
+        "image": "http://ichef.bbci.co.uk/wwfeatures/960_540/images/live/p0/2j/n8/p02jn887.jpg",
+        "imageCredit": "Kate Davies/Unknown Fields",
+        "summary": "<p>This article is an in-depth look at international ocean shipping, the vast, interconnected logistical behemoth of supply chains. Not only is every port so well organized, but as it turns out&mash;most ports are very similar. They all have giant cranes hauling containers off every ship, trucks to pull away the containers from the cranes, and a highly organized sea of stacked containers to prepare for destinations elsewhere.</p>",
+        "source": "BBC",
+        "sourceType": "news",
+        "author": "Tim Maughan"
+    },
+    {
+        "date": "2015-02-11",
+        "title": "Jon Stewart says he’s leaving The Daily Show",
+        "url": "http://www.avclub.com/article/jon-stewart-says-hes-leaving-daily-show-215070",
+        "image": "http://i.onionstatic.com/avclub/5338/27/16x9/1280.jpg",
+        "summary": "<p>I stopped watching daily show a long time ago. So much of his show was about pointing at people and finding clips to show that person saying one thing but doing another, and hypocrisy here there and everywhere.</p><p>It made you cynical. Over time, the show became extremely cynical. And cynicism leads to apathy, something the show&rsquo;s main demographic&mdash;our generation&mdash;already has in abundance.</p><p>Jon Stewart&rsquo;s message was, &ldquo;let&rsquo;s have reasonable discourse, instead of polarizing everything and making everything an us vs. them dick measuring contest.&rdquo; This message was so amazing, but I guess nobody was listening.  As for how the show evolved over time, the problem for wasn&rsquo;t the content of the narrative, it&rsquo;s the framing of the narrative. Everything is bullshit. Those with power/wealth are all hypocrites. Look at all these retarded people running our country.</p><p>Us vs. them. Everything has to be divided into sides. Are you team Jacob or team Edward? You&rsquo;ll never win, because you&rsquo;re choosing one of two myths.</p><p>Let&rsquo;s say you choose team Edward because you believe in sparkles. Anyone who chooses to be a werewolf is anti-sparkle and is therefore retarded. And then you find out that team Jacob has a bunch of supporters. OH MY GOD HOW CAN THEY BELIEVE IN JACOB BULLSHIT? That just fills you up with outrage. So much bickering.</p><p>Let&rsquo;s consider it from a perspective that&rsquo;s not yours. Say you&rsquo;re a mommy who chooses not to vaccinated your kids. You know big Pharma is evil and medical research doesn&rsquo;t exactly have a stellar track record (see: Tuskegee). Then you meet people who support vaccines. They say, &ldquo;You&rsquo;re a stupid idiot and you&rsquo;re threatening all of society and everyone hates you!&lrquo; Do you honestly think that kind of persuasion is going to change your mind? Probably not, because nobody likes being yelled at.</p><p>That&rsquo;s the problem I have with Daily Show. All that yelling, even if the yelling was sandwiched in witty jokes.</p><p>I think Jon Stewart was at his best when he called people out&mdash;to their faces&mdash;for their errors. The most notable being that time he went on Crossfire and called Paul Begala and Tucker Carlson, &ldquo;political hacks.&rdquo; Or, in the <a rhef=\"http://thedailyshow.cc.com/video-playlists/srkt02/daily-show-14036/iinzrx\">Jim Cramer beatdown.</a> In other words, I think he is best at what he does when he&rsquo;s actually being serious.</p>",
+        "source": "A.V. Club",
+        "sourceType": "blog",
+        "author": "Sean O&rsquo;Neal"
+    },
+    {
+        "date": "2015-02-10",
+        "title": "The Magic of NeoPixels",
+        "url": "https://learn.adafruit.com/adafruit-neopixel-uberguide",
+        "video": "https://www.youtube.com/v/HO6xQMR8naw",
+        "videoCredit": "Adafruit Industries",
+        "summary": "<p>New resolution goal for 2015! Learn how to make LED lights react to music, and learn it by end of May, because light shows and costumes. Let&rsquo;s all get into this geeky stuff and geek out. I am very excited to start Arduino projects.</p>",
+        "source": "Adafruit Industries",
+        "sourceType": "business",
+        "author": "Phillip Burgess"
+    },
+    {
+        "date": "2015-02-09",
+        "title": "The Port of Rotterdam",
+        "url": "https://www.youtube.com/watch?v=SPTa8EiYBlQ",
+        "video": "https://www.youtube.com/v/SPTa8EiYBlQ",
+        "summary": "<p>(Well you do have to get over the cheesy dubstep.) Rotterdam is one of the world&rsquo;s largest and most busiest ports. This video doesn&rsquo;t have aerial footage of the port, but it definitely gives a sense of scale and the craziness that happens there</p><p>Most importantly, it is very beautiful in its presentation of the activity, the people, the dramatic views. One gets a sense that Rotterdam is one vast, extremely intricate machines of so many moving components.</p>",
+        "source": "YouTube",
+        "sourceType": "video",
+        "author": "Havenbedrijf Rotterdam"
+    },
+    {
+        "date": "2015-02-08",
+        "title": "River of Faith: A film about the Kumbh Mela 2013",
+        "url": "https://www.youtube.com/watch?v=cQNoimABjMQ",
+        "video": "https://www.youtube.com/v/cQNoimABjMQ",
+        "summary": "<p>Every 3 years, millions of Hindus make a pilgramage and bathes at a sacred river for one and half months. They become the largest human gatherings in the world.</p><p>I once showed an Indian friend a video of Burning Man. Spiritualism, rampant nudity, lots of people high on drugs, fire everywhere, camping, and beautiful outfits... then he pointed out to me the Burn is basically a very tiny version of Kumbh Mela.</p>",
+        "source": "YouTube",
+        "sourceType": "video",
+        "author": "Namit Arora"
+    },
+    {
+        "date": "2015-02-07",
+        "title": "The Internet Fantasy of the &lsquo;Perfect Response&rsquo;",
+        "url": "http://nymag.com/daily/intelligencer/2015/02/fantasy-of-the-perfect-response.html",
+        "image": "",
+        "summary": "<p>Here's a interesting commentary pointing how so many articles that are our clickbait and reinforcement of our own echo chambers. Then again, this article reinforces my own personal belief that the wealth of stuff on the Internet only isolates and entrenches us.</p><p><em>&ldquo;The Perfect Response is, in essence, not a radical new perspective, but simply a person saying a thing you agree with to a person you disagree with. It&rsquo;s a kind of linguistic record-scratch, a perfectly crafted gotcha that ostensibly stops trolls in their troll-tracks and forces them to deeply reconsider the sad wreckage of their wasted lives. Which means the Perfect Response is also largely a figment of the internet&rsquo;s imagination.&rdquo;</em></p>",
+        "source": "New York Magazine",
+        "sourceType": "magazine",
+        "author": "Adam Sternbergh"
+    },
+    {
+        "date": "2015-02-06",
+        "title": "The Year of Outrage",
+        "url": "http://www.slate.com/articles/life/culturebox/2014/12/the_year_of_outrage_2014_everything_you_were_angry_about_on_social_media.html",
+        "image": "",
+        "summary": "<p>One of the greatest things I&rsquo;ve seen: a giant chart, one link for each day of 2014, listing the thing that caused the most outrage.</p><p>After clicking around, I've decided on a new resolution for 2015: I will no longer post any stories describing current events that infuriate me, nor will I join in any online pissing-contest argument about something in or about the news.</p><p>It&rsquo;s only when you actually count the number of articles you see each day about Fox News, vaccine truthers, police brutality, Pegida, NFL wife beaters, ‪&num;hashtag‬ this and ‪&num;hashtag‬ that&mdash;rabble rabble rabble&mdash;it becomes that much obvious that so many people spend so much time being angry clickbaiters.</p>",
+        "source": "Slate Magazine",
+        "sourceType": "magazine",
+        "author": [
+            "Julia Turner",
+            "Choire Sicha",
+            "Katy Waldman",
+            "Amanda Hess",
+            "Willa Paskin",
+            "Jamelle Bouie",
+            "Betsy Woodruff",
+            "Jodan Weissmann",
+            "Andrew Goldman",
+            "Paul Ford ",
+            "Dan Kois"
+            ]
+    },
+    {
+        "date": "2015-02-05",
+        "title": "Friendship Is Complicated: Art, commerce, and the battle for the soul of My Little Pony.",
+        "url": "http://blog.longreads.com/2015/01/28/friendship-is-complicated/",
+        "image": "https://longreadsblog.files.wordpress.com/2015/01/mlpcolor03pb.jpg?w=1280",
+        "imageCredit": "Pat Barrett",
+        "summary": "<p>Here is the saga of Lauren Faust (also of <em>Powerpuff Girls</em>) the creator of the hit TV show <em>My Little Pony: Friendship is Magic</em> and its aftermath. The show was inspired by the Hasbro toy line and was meant to empower its young, female audience. (Side effect: adored by bronies.)</p><p>Faust quit doing the show after a spinoff was made: <em>Equestria Girls</em>. This show was different. The ponies anthropomorphized into slutty little teenagers, obsessed with their hair and clothes being popular. What the fuck? The whole point was to sell toys. In fact, it has always been about the toys. The show is nothing more than a long, glorified toy commercial.</p><p>Also, bronies... the article talkes about bronies too.</p>",
+        "source": "Longreads",
+        "sourceType": "long form",
+        "author": "Maria Bustillos"
+    },
+    {
+        "date": "2015-02-04",
+        "title": "The Regulation of Ant Colony Foraging Activity without Spatial Information",
+        "url": "http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002670",
+        "summary": "<p>Harvester Ants have a very special way of gathering seeds. Each worker ant is sent out to find a seed and won&rsquo;t come back until it finds food. Obviously, some ants die if they find nothing. However, if food is plentiful, that means more ants are coming back. If more ants are coming back then more ants are sent out from the colony to find food</p><p>What was just described is basically how Transmission Control Protocol (TCP/IP) works. When a source sends data to a destination, the file is sent in a series of packets. When the destination receives each packet it sends an acknowledgement back to the source. This feedback loop tells the source how much bandwidth is available: if the acknowledgements are returning slowly, then it means the line is congested and so the source will send packets with less frequency.</p><p>In other words, ants are the Internet.</p>",
+        "source": "Public Library of Science",
+        "sourceType": "journal",
+        "author": [
+            "Balaji Prabhakar",
+            "Balaji Prabhakar",
+            "Katherine N. Dektar",
+            "Deborah M. Gordon"
+        ]
+    },
+    {
+        "date": "2015-02-03",
+        "title": "One Man&rsquo;s Quest to Rid Wikipedia of Exactly One Grammatical Mistake",
+        "url": "https://medium.com/backchannel/meet-the-ultimate-wikignome-10508842caad",
+        "image": "",
+        "summary": "",
+        "source": "Medium",
+        "sourceType": "long form",
+        "author": "Andrew McMillen"
+    },
+    {
+        "date": "2015-02-03",
+        "title": "Misophonia is a newly identified condition for people hypersensitive to sound",
+        "url": "http://www.washingtonpost.com/national/health-science/misophonia-is-a-newly-identified-condition-for-people-hypersensitive-to-sound/2014/12/01/7c392782-69ba-11e4-a31c-77759fc1eacc_story.html",
+        "image": "",
+        "summary": "<p>Mouth breathers; croaky vocal fry, uptalk and that fucking hissing &ldquo;s&rdquo; sibilence; incessant throat-clearing, sniffling, or coughing; snoring, loud chewing....</p><p>Today I learned there&rsquo;s a word for when certain sound triggers make you go angry nuts: &ldquo;misphonia.&rdquo; It&rsquo;s the reason why I spent $300 on noise-cancelling Bose earphones, and why I always have a an extra set of earplugs in my backpack or pocket.</p><p>I actually pick and choose friends based on the sounds that come out of their mouths. All this time I just though I had really sensitive hearing. Turns out I&rsquo;m just a jerk.</p>",
+        "source": "Washington Post",
+        "sourceType": "news",
+        "author": "Meeri N. Kim"
+    },
+    {
+        "date": "2015-02-02",
+        "title": "Simon Cockerell who&rsquo;s been to North Korea 140 TIMES shares his unrivalled insight",
+        "url": "http://www.dailymail.co.uk/news/article-2929744/Killer-high-heels-dog-ribs-gravy-Bend-Like-Beckham-smash-man-visited-150-TIMES.html",
+        "image": "http://i.dailymail.co.uk/i/pix/2015/01/28/2523638D00000578-2929744-image-a-43_1422447061219.jpg",
+        "imageCredit": "Simon Cockerell",
+        "summary": "asdf",
+        "source": "Daily Mail",
+        "sourceType": "news",
+        "author": "Jamie Fullerton"
+    },
+    {
+        "date": "2015-02-01",
+        "title": "Katy Perry&rsquo;s Sharks Were The Best Part Of The Super Bowl",
+        "url": "http://www.buzzfeed.com/kristinchirico/katy-perrys-sharks-were-the-best-part-of-the-super-bowl-half#.eb2xnMNMR",
+        "image": "http://cdn-jpg.si.com/sites/default/files/styles/si_article_main/public/2015/02/03/katy_perry_sharks_super_bowl_halftime_show.jpg",
+        "imageCredit": "Kevin Mazur/WireImage",
+        "summary": "<p>Katy Perry just won Burning Man. She arrived onto the field riding a giant golden tiger art car. There were lots of cool lighting effects and choreography, and then....</p><p>She performed a song set in a trippy acid landscape with talking trees and beach balls, and of course, dancing sharks. You want a dancing shark costume, I want a dancing shark costume.</p>",
+        "source": "BuzzFeed",
+        "sourceType": "blog",
+        "author": "Kristin Chirico"
+    },
+    {
+        "date": "2015-01-31",
+        "title": "Weather map goes crazy live on the air",
+        "url": "https://www.youtube.com/watch?v=iXuc7SAyk2s",
+        "image": "",
+        "video": "https://www.youtube.com/v/iXuc7SAyk2s",
+        "summary": "<p>Local Phoenix weatherman Cory McCloskey has to deal with a messed up weather map on live TV, and handles himself so well. I don&rsquo;t want to quote what he says, because it will spoil the hilarity.</p><p>Also, the man is rocking a pretty nice suit.</p>",
+        "source": "YouTube",
+        "sourceType": "video",
+        "author": "FOX 10 Phoenix"
+    },
+    {
+        "date": "2015-01-30",
+        "title": "Why does food taste different on planes?",
+        "url": "http://www.bbc.com/future/story/20150112-why-in-flight-food-tastes-weird",
+        "image": "",
+        "summary": "",
+        "source": "BBC",
+        "sourceType": "news",
+        "author": "Katia Moskvitch"
+    },
+    {
+        "date": "2015-01-29",
+        "title": "The Cruelty and Controversy of Beijing&rsquo;s Black Market for Dogs",
+        "url": "http://www.vice.com/read/how-not-to-buy-a-dog-in-beijing",
+        "image": "",
+        "summary": "",
+        "source": "Vice",
+        "sourceType": "long form",
+        "author": "Nona Tepper"
+    },
+    {
+        "date": "2015-01-28",
+        "title": "Why Vending Machines Are So Popular in Japan",
+        "url": "http://kotaku.com/why-vending-machines-are-so-popular-in-japan-1682336996",
+        "image": "",
+        "summary": "",
+        "source": "Kotaku",
+        "sourceType": "blog",
+        "author": "Brian Ashcraft"
+    },
+    {
+        "date": "2015-01-27",
+        "title": "Not a Very P.C. Thing to Say",
+        "url": "http://nymag.com/daily/intelligencer/2015/01/not-a-very-pc-thing-to-say.html?mid=nymag_press",
+        "image": "",
+        "summary": "",
+        "source": "New York Magazine",
+        "sourceType": "magazine",
+        "author": "Johnathan Chait"
+    },
+    {
+        "date": "2015-01-26",
+        "title": "Photos: Everyone In NYC Is Currently On Line At The Grocery Store",
+        "url": "http://gothamist.com/2015/01/26/snowpocalypse_supermarket.php",
+        "image": "",
+        "summary": "",
+        "source": "Gothamist",
+        "sourceType": "blog",
+        "author": "Nell Casey"
+    },
+    {
+        "date": "2015-01-25",
+        "title": "The Terrible Sea Lion",
+        "url": "http://wondermark.com/1k62/",
+        "image": "http://wondermark.com/c/2014-09-19-1062sea.png",
+        "summary": "<p>A delightful comic a those goddamn sea lions&mdash;you know&mdash;the ones we encounter so very often..</p><p>(Hint: it&rsquo;s not actually about sea lions.)</p>",
+        "source": "Wondermark",
+        "sourceType": "blog",
+        "author": "David Malki"
+    },
+    {
+        "date": "2015-01-24",
+        "title": "A pre-Reasonable Doubt mixtape by Jay Z has surfaced",
+        "url": "http://www.thefourohfive.com/news/article/a-pre-reasonable-doubt-mixtape-by-jay-z-has-surfaced-142",
+        "image": "",
+        "summary": "",
+        "source": "405",
+        "sourceType": "blog",
+        "author": "Russell Thomas"
+    },
+    {
+        "date": "2015-01-23",
+        "title": "Air catalog SkyMall seeks bankruptcy protection",
+        "url": "http://www.usatoday.com/story/todayinthesky/2015/01/23/airline-catalog-skymall-files-for-bankruptcy/22213809/",
+        "image": "",
+        "summary": "",
+        "source": "USA Today",
+        "sourceType": "news",
+        "author": [
+            "Ben Mutzabaugh",
+            "Kevin McCoy"
+        ]
+    },
+    {
+        "date": "2015-01-22",
+        "title": "King Tut&#39;s beard &#39;hastily glued back on with epoxy&#39;",
+        "url": "http://www.telegraph.co.uk/news/worldnews/africaandindianocean/egypt/11361822/King-Tuts-beard-hastily-glued-back-on-with-epoxy.html",
+        "image": "http://i.telegraph.co.uk/multimedia/archive/03174/Tutankhamen_broken_3174186b.jpg",
+        "summary": "<p>So basically, someone tried to superglue it back together, fucked up, then got glue on its face, tried to scratch it off with a spatula, and got the face all dented and marred.</p><p>I would have loved to be in that room.... &ldquo;Dammit, stop making it worse!&rdquo;</p>",
+        "source": "Telegraph",
+        "sourceType": "news",
+        "author": "Harriet Alexander"
+    },
+    {
+        "date": "2015-01-21",
+        "title": "Rebecca L&eacute;veill&eacute;-Guay: Paintings",
+        "url": "http://www.rleveille.com/paintings.html",
+        "image": "",
+        "summary": "",
+        "source": "Rebecca L&eacute;veill&eacute;-Guay",
+        "sourceType": "gallery"
+    },
+    {
+        "date": "2015-01-20",
+        "title": "Android Netrunner – The Game Designer&rsquo;s Game",
+        "url": "http://gamedesignreviews.com/scrapbook/android-netrunner-the-game-designers-game/",
+        "image": "",
+        "summary": "",
+        "source": "Game Design Reviews",
+        "sourceType": "blog",
+        "author": "Krystian Majewski"
+    },
+    {
+        "date": "2015-01-19",
+        "title": "Why Magic: The Gathering struggles to stay relevant to casual players",
+        "url": "http://www.avclub.com/article/why-magic-the-gathering-struggles-to-stay-relevant-106217",
+        "image": "",
+        "summary": "",
+        "source": "A.V. Club",
+        "sourceType": "blog",
+        "author": "Steve Heisler"
+    },
+    {
+        "date": "2015-01-18",
+        "title": "Where are Israeli Women?",
+        "url": "http://www.newyorker.com/news/news-desk/jerusalem-haredim-women-equality",
+        "image": "",
+        "summary": "",
+        "source": "New Yorker",
+        "sourceType": "magazine",
+        "author": ""
+    },
+    {
+        "date": "2015-01-17",
+        "title": "HOW LEGO BECAME THE APPLE OF TOYS",
+        "url": "http://www.fastcompany.com/3040223/when-it-clicks-it-clicks",
+        "image": "",
+        "summary": "",
+        "source": "Fast Company",
+        "sourceType": "long form",
+        "author": ""
+    },
+    {
+        "date": "2015-01-16",
+        "title": "Fibonacci Zoetrope Sculptures",
+        "url": "https://vimeo.com/116582567",
+        "image": "",
+        "summary": "",
+        "source": "Vimeo",
+        "sourceType": "video",
+        "author": ""
+    },
+    {
+        "date": "2015-01-11",
+        "title": "No. 37: Big Wedding or Small?: Quiz: The 36 Questions That Lead to Love",
+        "url": "http://www.nytimes.com/2015/01/11/fashion/no-37-big-wedding-or-small.html",
+        "image": "",
+        "summary": "",
+        "source": "New York Times",
+        "sourceType": "news",
+        "author": ""
+    },
+    {
+        "date": "2015-01-08",
+        "title": "BMW E28 5-Series&#39; Are the Ideal Family Cars",
+        "url": "https://www.youtube.com/watch?v=8HzsJG0Sb_s",
+        "image": "",
+        "video": "https://www.youtube.com/v/8HzsJG0Sb_s",
+        "summary": "",
+        "source": "YouTube",
+        "sourceType": "video",
+        "author": ""
+    },
+    {
+        "date": "20141220",
+        "title": "Houshi",
+        "url": "https://vimeo.com/114879061",
+        "image": "",
+        "summary": "",
+        "source": "Vimeo",
+        "sourceType": "video",
+        "author": ""
+    },
+    {
+        "date": "2014-12-19",
+        "title": "Bodh Gaya",
+        "url": "http://en.wikipedia.org/wiki/Bodh_Gaya",
+        "image": "http://www.indianmirror.com/tourism/images/bodhgaya-main-img.jpg",
+        "imageCredit": "Indian Mirror",
+        "summary": "<p>Bodh Gaya in Bihar, India, is the most holy site for Buddhists and is the place where the Buddha achieved enlightment. The main temple is the Mahabodhi Temple, but surrounding the area are other temples and monastaries built by other Buddhist countries.</p>",
+        "source": "Wikipedia",
+        "sourceType": "wiki"
+    },
+    {
+        "date": "2014-12-18",
+        "title": "Yiwu: The Chinese city where Christmas is made and sold",
+        "url": "http://www.bbc.com/future/story/20141218-the-hidden-home-of-christmas",
+        "image": "",
+        "summary": "",
+        "source": "BBC",
+        "sourceType": "news",
+        "author": ""
+    },
+    {
+        "date": "2014-12-17",
+        "title": "Zettai Ryouiki (絶対領域)",
+        "url": "http://en.wikipedia.org/wiki/Zettai_ryoiki",
+        "image": "",
+        "summary": "Zettai Ryouiki (絶対領域) literally translates to “absolute territory”.",
+        "source": "Wikipedia",
+        "sourceType": "wiki",
+        "author": ""
+    },
+    {
+        "date": "2014-12-16",
+        "title": "Lost in Translation: The world&rsquo;s most unique words?",
+        "url": "http://www.bbc.com/culture/story/20141216-ten-untranslatable-words",
+        "image": "",
+        "summary": "<p>Languages fascinate me because I often wonder if you don&rsquo;t have the words to describe what you&rsquo;re feeling, can you really feel it? Then, do people with different languages think and feel in the same way? The BBC has compiled some words gathered by Ella Frances Sanders in her book, <em>Lost in Translation</em>.</p><ul><li><strong>Mangata</strong>&mdash;&ldquo;the road-like reflection of the moon in the water.&rdquo; (Swedish)</li><li><strong>Akihi</strong>&mdash;&ldquo;listening to directions and then walking off and promptly forgetting them.&rdquo; (Hawaiian)</li><li><strong>Hiraeth</strong>&mdash;&ldquo;a homesickness for somewhere you cannot return to, the nostalgia and the grief for the lost places of your past, places that never were.&rdquo; (Welsh)</li><li><strong>Iktsuarpok</strong>&mdash;&ldquo;the act of repeatedly  going outside to keep checking if someone (anyone) is coming.&rdquo; (Inuit)</li><li><strong>Kummerspeck</strong>&mdash;literally, &ldquo;grief bacon,&rdquo; or the &ldquo;excess weight gained from emotional over-eating&rdquo; (German)</li><li><strong>Wabi-Sabi</strong>&mdash;&ldquo;finding beauty in the imperfections, an acceptance of the cycle of life and death&rdquo; (Japanese)</li><li><strong>Pisan Zapra</strong>&mdash;&ldquo;the time needed to eat a banana&rdquo; (Malay)</li><li><strong>Kalpa</strong>&mdash;&ldquo;the passing of time on a grand, cosmological scale&rdquo; (Sanskrit)</li><li><strong>Tsundoku</strong>&mdash;&ldquo;leaving a book unread after buying it, typically piled up together with other unread books&rdquo; (Japanese)</li><li><strong>Boketto</strong>&mdash;&ldquo;gazing vacantly into the distance without really thinking about anything specific&rdquo; (Japanese)</li></ul>",
+        "source": "BBC",
+        "sourceType": "news",
+        "author": "Fiona Macdonald"
+    },
+    {
+        "date": "2014-12-15",
+        "title": "From Lycos to Ask Jeeves to Facebook: Tracking the 20 most popular web sites every year since 1996",
+        "url": "http://www.washingtonpost.com/news/the-intersect/wp/2014/12/15/from-lycos-to-ask-jeeves-to-facebook-tracking-the-20-most-popular-web-sites-every-year-since-1996/?tid=trending_strip_5",
+        "image": "",
+        "summary": "",
+        "source": "Washington Post",
+        "sourceType": "news",
+        "author": ""
+    },
+    {
+        "date": "2014-12-14",
+        "title": "Instant noodle attack and other weirdness forces Air Asia flight back to Bangkok",
+        "url": "http://bangkok.coconuts.co/2014/12/12/instant-noodle-attack-and-other-weirdness-forces-air-asia-flight-back-bangkok",
+        "image": "",
+        "summary": "",
+        "source": "Coconuts Bangkok",
+        "sourceType": "blog",
+        "author": ""
+    },
+    {
+        "date": "2014-12-13",
+        "title": "Inside the collapse of the New Republic",
+        "url": "http://www.newyorker.com/news/news-desk/inside-collapse-new-republic",
+        "image": "",
+        "summary": "",
+        "source": "New Yorker",
+        "sourceType": "magazine",
+        "author": ""
+    },
+    {
+        "date": "2014-12-12",
+        "title": "Korean Air &lsquo;nut rage&rsquo; executive Heather Cho resigns",
+        "url": "http://www.bbc.com/news/world-asia-30390724",
+        "image": "http://static4.businessinsider.com/image/548b1c926bb3f7f92dcd3beb-1200-924/korean-air-heather-cho.jpg",
+        "summary": "<p>Heather Cho (조현아) was the vice president; while a flight was getting ready to depart, a flight attendent served her nuts in a bag instead of on a plate. The flight attendant was forced to kneel and apologize, but it was wasn't enough for Cho, so she ordered the plane to be turned around.</p><p>So facinating that a major executive of a company (and the daughter of the owner, no less) would resign over something. Yes, she deserves to be removed from her position, but it&rsquo;s so refreshing to see a powerful person actually have to face consequences.</p>",
+        "source": "BBC",
+        "sourceType": "news",
+        "author": "Michael Bristow"
+    },
+    {
+        "date": "2014-12-11",
+        "title": "Peru to take legal action over Greenpeace stunt at ancient Nazca lines",
+        "url": "http://www.theguardian.com/world/2014/dec/10/peru-legal-action-greenpeace-stunt-nazca-lines",
+        "image": "",
+        "summary": "",
+        "source": "Guardian",
+        "sourceType": "news",
+        "author": ""
+    },
+    {
+        "date": "2014-12-10",
+        "title": "50+ Designers Share Their Top 3 Design Trends For 2015",
+        "url": "http://foundersgrid.com/design-trends-2015",
+        "image": "",
+        "summary": "",
+        "source": "Founders Grid",
+        "sourceType": "blog",
+        "author": ""
+    },
+    {
+        "date": "2014-12-09",
+        "title": "10 Spanish Words That Have No English Translation",
+        "url": "http://www.huffingtonpost.com/2014/05/27/spanish-words-no-translation_n_5399000.html",
+        "image": "",
+        "summary": "<ul><li><strong>Sobremesa</strong>&mdash;that moment after eating a meal when the food is gone but the conversation is still flowing at the table.</li><li><strong>Estrenar</strong>&mdash;to wear or use something for the first time.</li><li><strong>Pena Ajena</strong>&mdash;to be ashamed or embarrassed on behalf of someone else, even if they don't share the feeling.</li><li><strong>Antier</strong>&mdash;a one-word way of saying the day before yesterday. A shorter version of <em>&ldquo;antes de ayer.&rdquo;</em></li><li><strong>Desvelado</strong>&mdash;unable to sleep or to be sleep deprived.</li><li><strong>Tuerto</strong>&mdash;a man with only one eye.</li><li><strong>Friolento</strong>&mdash;someone who is very sensitive to cold.</li><li><strong>Te quiero</strong>&mdash;a way to tell someone you care about them. Particularly when romance is involved, more meaningful than an &ldquo;I like you&rdquo; but less meaningful than an &ldquo;I love you.&rdquo;</li><li><strong>Merendar</strong>&mdash;to have a snack or to go out for an afternoon snack.</li><li><strong>Tutear</strong>&mdash;to treat someone informally by addressing them as &ldquo;t&uacute;&rdquo; instead of the more formal &ldquo;usted.&rdquo;</li></ul>",
+        "source": "Huffington Post",
+        "sourceType": "news",
+        "author": ""
+    },
+    {
+        "date": "2014-12-08",
+        "title": "Juliane Koepcke",
+        "url": "http://en.wikipedia.org/wiki/Juliane_Koepcke",
+        "image": "",
+        "summary": "<p>Juliane Margaret Koepcke, at age 17, was the sole survivor of the 24 December 1971 crash of LANSA Flight 508. The plane was struck by lightning while flying over the Peruvian rainforest and disintegrated midair at 10,000 ft. She was still strapped to her chair as she fell. She could not find her mother, but relied upon survival training from her father to locate a stream and wander downstream.</p><p>For nine days, she endured infection and other injuries from the fall. She located a boat and waited for the owners to arrive, who then took her on a canoe ride to a lumber station and flown away to a hospital</p><p>Koepcke to get a doctorate in biology (like her parents) and specialized in the study of bats.</p>",
+        "source": "Wikipedia",
+        "sourceType": "wiki",
+        "author": ""
+    },
+    {
+        "date": "2014-12-07",
+        "title": "In Defense Of Spielberg&rsquo;s WAR OF THE WORLDS",
+        "url": "http://badassdigest.com/2013/02/19/in-defense-of-spielbergs-war-of-the-worlds/",
+        "image": "",
+        "summary": "",
+        "source": "Baddass Digest",
+        "sourceType": "blog",
+        "author": ""
+    },
+    {
+        "date": "2014-12-06",
+        "title": "Having Gone Largely Unnoticed In The ‘Game Of Thrones&rsquo; Series, It&rsquo;s Now Impossible To Take Your Eyes Off It",
+        "url": "http://smatterist.com/749/gone-largely-unnoticed-game-thrones-series-now-impossible-take-eyes/",
+        "image": "",
+        "summary": "",
+        "source": "Smatterist",
+        "sourceType": "blog",
+        "author": ""
+    },
+    {
+        "date": "2014-12-05",
+        "title": "Languages: Why we must save dying tongues",
+        "url": "http://www.bbc.com/future/story/20140606-why-we-must-save-dying-languages",
+        "image": "",
+        "summary": "",
+        "source": "BBC",
+        "sourceType": "news",
+        "author": ""
+    },
+    {
+        "date": "2014-12-04",
+        "title": "The Moors Murders",
+        "url": "http://en.wikipedia.org/wiki/Moors_murders",
+        "image": "",
+        "summary": "",
+        "source": "Wikipedia",
+        "sourceType": "wiki",
+        "author": ""
+    },
+    {
+        "date": "2014-12-03",
+        "title": "Cheating the Beautiful Game",
+        "url": "http://www.newyorker.com/the-sporting-scene/cheating-the-beautiful-game",
+        "image": "",
+        "summary": "",
+        "source": "New Yorker",
+        "sourceType": "magazine",
+        "author": "Alan Burdick"
+    },
+    {
+        "date": "2014-12-02",
+        "title": "Darkness",
+        "url": "http://english.bouletcorp.com/2012/02/01/darkness/",
+        "image": "",
+        "summary": "",
+        "source": "Bouletcorp",
+        "sourceType": "blog",
+        "author": "Boulet"
+    },
+    {
+        "date": "2014-12-01",
+        "title": "Hallucinogenic nights",
+        "url": "http://aeon.co/magazine/psychology/the-terror-and-the-bliss-of-sleep-paralysis/",
+        "image": "",
+        "summary": "",
+        "source": "Aeon Magazine",
+        "sourceType": "long form",
+        "author": "Karen Emslie"
+    },
+    {
+        "date": "2014-11-30",
+        "title": "The End of Apps As We Know Them",
+        "url": "http://blog.intercom.io/the-end-of-apps-as-we-know-them/",
+        "image": "",
+        "summary": "",
+        "source": "Inside Intercom",
+        "sourceType": "blog",
+        "author": "Paul Adams"
+    },
+    {
+        "date": "2014-11-29",
+        "title": "Why Netrunner Matters",
+        "url": "http://killscreendaily.com/articles/why-netrunner-matters/",
+        "image": "http://killscreendaily.com/media/img/articles/creation.jpg",
+        "summary": "",
+        "source": "Kill Screen",
+        "sourceType": "long form",
+        "author": "Clayton Purdom"
+    }
+]
