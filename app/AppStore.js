@@ -84,29 +84,6 @@ export default class AppStore extends Store {
     fetch90sImage() {
         let url = 'http://redwall.herereadthis.com/api/banner_image/';
         let updateCache = this.store90sImage();
-        let randomIndex = AppStore.NINETIES_IMG.INDEX;
-        let currentIndex = AppStore.NINETIES_IMG.INDEX;
-        let getIndex = LocalStorageMethods.get(AppStore.NINETIES_IMG.INDEX_NAME);
-
-        if (LocalStorageMethods.get(AppStore.NINETIES_IMG.INDEX_NAME) ===
-                undefined) {
-        }
-        else {
-            if (getIndex !== undefined) {
-                currentIndex = getIndex;
-            }
-            let imgCount = this.state.ninetiesImgSize;
-
-            if (imgCount !== 0) {
-                randomIndex = AppConstants.getRandomInteger(imgCount);
-                while(randomIndex === currentIndex) {
-                    randomIndex = AppConstants.getRandomInteger(imgCount);
-                }
-            }
-        }
-        LocalStorageMethods.set(
-            AppStore.NINETIES_IMG.INDEX_NAME,
-            randomIndex);
 
         if (updateCache === true ||
             LocalStorageMethods.get(AppStore.NINETIES_IMG.NAME) === undefined ||
@@ -123,46 +100,45 @@ export default class AppStore extends Store {
                         AppStore.NINETIES_IMG.NAME,
                         JSON.stringify(response.data)
                     );
+                    LocalStorageMethods.set(
+                        AppStore.NINETIES_IMG.KEY,
+                        new Date()
+                    );
                     this.setNew90sIndex(dataLength);
-                    this.setState({
-                        ninetiesImgSize: dataLength
-                    });
                 }
             );
         }
         else {
-            this.setState({
-                ninetiesImgSize: LocalStorageMethods.get(AppStore.NINETIES_IMG.COUNT)
-            });
-            this.setNew90sIndex(this.state.ninetiesImgSize)
+            this.setNew90sIndex(LocalStorageMethods.get(AppStore.NINETIES_IMG.COUNT))
         }
     }
     setNew90sIndex = (size) => {
+        this.setState({
+            ninetiesImgSize: size
+        });
         LocalStorageMethods.set(
             AppStore.NINETIES_IMG.INDEX_NAME,
-            size
+            AppConstants.getRandomInteger(size)
         );
     };
 
     store90sImage() {
-        let cache90sImage, newCache, dateDiff, upDateCache;
+        let cache90sImage, newCache, dateDiff, updateCache;
 
         cache90sImage = LocalStorageMethods.get(AppStore.NINETIES_IMG.KEY);
         newCache = new Date();
-        upDateCache = false;
+        updateCache = false;
 
         if (cache90sImage === undefined) {
-            LocalStorageMethods.set(AppStore.NINETIES_IMG.KEY, newCache);
-            cache90sImage = newCache;
-            upDateCache = true;
+            cache90sImage = new Date();
+            updateCache = true;
         }
         dateDiff = Date.parse(newCache) - Date.parse(cache90sImage);
 
         if (dateDiff - AppStore.NINETIES_IMG.CACHE > 0) {
-            upDateCache = true;
+            updateCache = true;
         }
-        window.console.log(upDateCache);
-        return upDateCache;
+        return updateCache;
     }
 
 
