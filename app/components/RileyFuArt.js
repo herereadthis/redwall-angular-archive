@@ -29,7 +29,13 @@ var mediaQueries = [768, 960, 1152];
 var colWidth = 8;
 var colLength = rileyColumns.length;
 
+import {LocalStorageMethods} from 'AppConstants';
+import AppStore from 'AppStore';
+
+
 export default class RileyFuArt {
+
+    static storeRileyShape = 'rileyRect';
 
     static sizer = () => {
         var windowWidth, bgWidth, bgX, bgPos;
@@ -57,6 +63,31 @@ export default class RileyFuArt {
 
 
 
+    };
+
+
+    static drawCanvas = () => {
+        var _i, getColor;
+        var rileyRect = [];
+
+        for (_i = 0;_i < colLength;_i = _i + 1) {
+            getColor = rileyColors[rileyColumns[colLength - _i - 1]];
+            rileyRect.push({
+                x: _i * colWidth,
+                y: 0,
+                w: colWidth,
+                h: colWidth,
+                fill: getColor
+            });
+        }
+
+/*
+        let updateCache = AppStore.store90sImage;
+        window.console.log(updateCache);
+        */
+
+        LocalStorageMethods.set(RileyFuArt.storeRileyShape, JSON.stringify(rileyRect));
+        window.console.log(JSON.parse(LocalStorageMethods.get(RileyFuArt.storeRileyShape)).length);
     };
 
     static setBackgroundPosition = () => {

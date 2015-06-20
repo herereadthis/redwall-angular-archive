@@ -27,11 +27,12 @@ export default class AppStore extends Store {
 
     static ID = 'AppStore';
     static LAST_PATH_KEY = 'lastPath';
-
+    static UPDATE_CACHE = {
+        KEY: 'lastCache',
+        TIME: 86400000
+    };
     static NINETIES_IMG = {
         NAME: 'ninetiesImg',
-        CACHE: 86400000,
-        KEY: 'cache90sImage',
         INDEX_NAME: 'ninetiesImgIndex',
         INDEX: 0,
         AMT: 'ninetiesImgCount'
@@ -76,6 +77,7 @@ export default class AppStore extends Store {
         if (updateCache === true ||
             LocalStorageMethods.get(AppStore.NINETIES_IMG.NAME) === undefined ||
             LocalStorageMethods.get(AppStore.NINETIES_IMG.AMT) === undefined) {
+            window.console.log('update cache!');
             axios.get(url)
                 .then((response) => {
                     let dataLength = response.data.length;
@@ -91,7 +93,7 @@ export default class AppStore extends Store {
                     );
                     // store the current time to define cache
                     LocalStorageMethods.set(
-                        AppStore.NINETIES_IMG.KEY,
+                        AppStore.UPDATE_CACHE.KEY,
                         new Date()
                     );
                     this.setNew90sIndex(dataLength);
@@ -128,7 +130,7 @@ export default class AppStore extends Store {
     store90sImage() {
         let cache90sImage, newCache, dateDiff, updateCache;
 
-        cache90sImage = LocalStorageMethods.get(AppStore.NINETIES_IMG.KEY);
+        cache90sImage = LocalStorageMethods.get(AppStore.UPDATE_CACHE.KEY);
         newCache = new Date();
         updateCache = false;
 
@@ -138,7 +140,7 @@ export default class AppStore extends Store {
         }
         dateDiff = Date.parse(newCache) - Date.parse(cache90sImage);
 
-        if (dateDiff - AppStore.NINETIES_IMG.CACHE > 0) {
+        if (dateDiff - AppStore.UPDATE_CACHE.TIME > 0) {
             updateCache = true;
         }
         return updateCache;
