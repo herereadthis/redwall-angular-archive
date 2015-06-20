@@ -109,23 +109,21 @@
         font-size: 1.2rem;
         height: 1.5rem;
     }
-    // & + article {
-    //     background: #000 url("@{img_path}space_bg.gif") scroll repeat 0 0;
-    // }
-    > div {
-        box-sizing: border-box;
-        margin: 0 auto;
+    > .bellmaker_container {
+        @media @da_baseline {
+            padding-bottom: 1rem;
+        }
+        @media @da_medium {
+            padding-bottom: 0;
+        }
     }
-
     .popup_box_simulator {
 
         @media @da_baseline {
             float: none;
             margin-left: 0;
-            margin-bottom: 1rem;
         }
         @media @da_x_small {
-            margin-bottom: 0;
             margin-right: 0rem;
             float: right;
             width: ((10 / 12) * @pw_x_small) - 2;
