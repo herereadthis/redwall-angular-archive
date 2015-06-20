@@ -10,6 +10,8 @@ import ParallaxScroll from 'components/ParallaxScroll';
 
 let bannerHasImg = null;
 
+import {LocalStorageMethods} from 'AppConstants';
+
 
 export default class Banner extends React.Component {
 //class Banner extends React.Component {
@@ -26,6 +28,7 @@ export default class Banner extends React.Component {
         this.props.flux.getActions(AppActions.ID).fetch90sImage(true);
     }
 
+    /*
     componentWillReceiveProps(nextProps) {
         if (nextProps.ninetiesImg !== 0) {
             let bannerImg = nextProps.ninetiesImg[0];
@@ -34,6 +37,7 @@ export default class Banner extends React.Component {
             });
         }
     }
+    */
 
 
     componentDidMount() {
@@ -48,7 +52,7 @@ export default class Banner extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        return nextProps.ninetiesImg !== this.props.ninetiesImg;
+        return nextProps.ninetiesImgSize !== this.props.ninetiesImgSize;
     }
 
 
@@ -114,7 +118,8 @@ export default class Banner extends React.Component {
     }
 
     makeImage = () => {
-        if (this.state.bannerImg === undefined) {
+        /*
+        if (this.props.ninetiesImg.length === 0) {
             return '';
         }
         else {
@@ -125,11 +130,17 @@ export default class Banner extends React.Component {
             else {
                 return '';
             }
+            window.console.log('asdf');
+            return '';
         }
+    */
     };
 
 
     render() {
+        window.console.log(
+            LocalStorageMethods.get('ninetiesImgIndex'),
+            this.props.ninetiesImgSize);
 
         return (
             <header role="banner" ref="starfield" className="starfield parallax_scroll">
@@ -138,7 +149,7 @@ export default class Banner extends React.Component {
                     <div id="header_panel" data-module="banner_image">
                         <a href="" onClick={this.handleClick}>
                             <span>Stand by for a 90s image!</span>
-                            <img src={this.makeImage()}
+                            <img src=""
                                  ref="bannerImage"/>
                         </a>
                     </div>

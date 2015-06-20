@@ -49,10 +49,6 @@ export default class RetroArt extends React.Component {
         return makeUpdate;
     }
 
-    componentWillReceiveProps(nextProps) {
-        window.console.log(nextProps.ninetiesImg[0]);
-    }
-
     render() {
         var addPadding = (pad) => {
             return {

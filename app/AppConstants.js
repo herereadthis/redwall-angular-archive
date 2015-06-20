@@ -36,8 +36,21 @@ export default class AppConstants {
     };
 
     static StringMethods = {
+        testIfJSON: (str) => {
+            try {
+                JSON.parse(str);
+            }
+            catch (e) {
+                return false;
+            }
+            return true;
+        },
         parseString: (str) => {
             let numRegex = /^(\d+\.?\d*|\d+,?\d*|\.\d+|,\d+)$/;
+
+            if (str === undefined) {
+                return;
+            }
 
             if (str === 'false') {
                 return false;
@@ -45,8 +58,13 @@ export default class AppConstants {
             else if (str === 'true') {
                 return true;
             }
-            else if (numRegex.test(str) === true) {
-                return parseFloat(str, 10);
+            else if (str.length < 20) {
+                if (numRegex.test(str) === true) {
+                    return parseFloat(str, 10);
+                }
+                else {
+                    return str;
+                }
             }
             else {
                 return str;
@@ -59,5 +77,9 @@ export default class AppConstants {
             <div data-sprite={sprite}/>
         )
     };
+
+    static getRandomInteger = (max) => {
+        return Math.floor(Math.random() * max);
+    }
 
 };
