@@ -34,7 +34,7 @@ export default class AppStore extends Store {
         KEY: 'cache90sImage',
         INDEX_NAME: 'ninetiesImgIndex',
         INDEX: 0,
-        COUNT: 'ninetiesImgCount'
+        AMT: 'ninetiesImgCount'
     };
 
     constructor(flux) {
@@ -47,20 +47,6 @@ export default class AppStore extends Store {
             ninetiesImgSize: 0,
             hitCounterFigures: HomepageConfig.hitCounterFigures
         };
-/*
-        let ninetiesSize = LocalStorageMethods.get(AppStore.NINETIES_IMG.COUNT);
-        if (ninetiesSize !== undefined) {
-            this.setState({
-                ninetiesImgSize: ninetiesSize
-            });
-        }
-        else {
-            this.setState({
-                ninetiesImgSize: 0
-            });
-
-        }
-        */
 
         const appActionsIds = flux.getActionIds(AppActions.ID);
 
@@ -85,21 +71,25 @@ export default class AppStore extends Store {
         let url = 'http://redwall.herereadthis.com/api/banner_image/';
         let updateCache = this.store90sImage();
 
+        // if the cache is too old, or if 90s image data has not been stored, or
+        // if the size of the data has not been stored
         if (updateCache === true ||
             LocalStorageMethods.get(AppStore.NINETIES_IMG.NAME) === undefined ||
-            LocalStorageMethods.get(AppStore.NINETIES_IMG.COUNT) === undefined) {
-            window.console.log('make API CALL');
+            LocalStorageMethods.get(AppStore.NINETIES_IMG.AMT) === undefined) {
             axios.get(url)
                 .then((response) => {
                     let dataLength = response.data.length;
+                    // store the size of the data
                     LocalStorageMethods.set(
-                        AppStore.NINETIES_IMG.COUNT,
+                        AppStore.NINETIES_IMG.AMT,
                         dataLength
                     );
+                    // store the 90s image data
                     LocalStorageMethods.set(
                         AppStore.NINETIES_IMG.NAME,
                         JSON.stringify(response.data)
                     );
+                    // store the current time to define cache
                     LocalStorageMethods.set(
                         AppStore.NINETIES_IMG.KEY,
                         new Date()
@@ -109,13 +99,26 @@ export default class AppStore extends Store {
             );
         }
         else {
-            this.setNew90sIndex(LocalStorageMethods.get(AppStore.NINETIES_IMG.COUNT))
+            this.setNew90sIndex(
+                LocalStorageMethods.get(AppStore.NINETIES_IMG.AMT));
         }
     }
     setNew90sIndex = (size) => {
         this.setState({
             ninetiesImgSize: size
         });
+        let randomIndex = AppConstants.getRandomInteger(size);
+        let cIndex = LocalStorageMethods.get(AppStore.NINETIES_IMG.INDEX_NAME);
+
+        // insure that the random generation is always different than the
+        // previous render
+        if (cIndex !== undefined) {
+            while (randomIndex === cIndex) {
+                randomIndex = AppConstants.getRandomInteger(size);
+            }
+        }
+        // store a random number that is between 0 and the number of total
+        // images stored in data
         LocalStorageMethods.set(
             AppStore.NINETIES_IMG.INDEX_NAME,
             AppConstants.getRandomInteger(size)
